@@ -4,7 +4,7 @@
 
 The GSEAPreranked module for GenePattern is a free genomic analysis program written in the Java(tm) language implementing the GSEA method by wrapping the GSEA Preranked tool of the [GSEA Desktop](https://github.com/GSEA-MSigDB/gsea-desktop) in a form suitable for [GenePattern](http://www.genepattern.org/).  This allows running GSEA Preranked analyses on the GenePattern servers in a batch setting using a web UI, with no client installation. 
 
-See the [module documentation](docs/v6/index.html) for tips on usage.
+See the [module documentation](https://gsea-msigdb.github.io/gseapreranked-gpmodule/v6/index.html) for tips on usage.
 
 # License
 
