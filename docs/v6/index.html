@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<!--
+  Copyright (c) 2003-2017 Broad Institute, Inc., Massachusetts Institute of Technology, and Regents of the University of California.  All rights reserved.
+-->
+<!-- saved from url=(0091)http://software.broadinstitute.org/cancer/software/genepattern/modules/docs/GSEAPreranked/5 -->
+<html class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>GSEAPreranked (v6.x Beta)</title>
+  <link href="./application.css" media="all" rel="stylesheet">
+  <script src="./application.js"></script><style>.cke{visibility:hidden;}</style><style type="text/css"></style>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="authenticity_token" name="csrf-param">
+<meta content="XeM/CveeikzhOV0h3xtrzbzAEIf/8Y5dJpVFPx3pU0o=" name="csrf-token">
+  <link href="http://software.broadinstitute.org/cancer/software/genepattern/assets/favicon-2382cf779a3f7287bc54add7e6f6b08d.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+
+<style type="text/css">.fancybox-margin{margin-right:15px;}</style></head>
+<body>
+	<div class="gp-content-header fluid">
+	<div class="container">
+		<h1>GSEAPreranked (v6.x Beta)</h1>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+                <div class="bs-callout bs-callout-danger">
+                    <h4>This module is currently in beta.  The module and/or documentation may be incomplete.</h4>
+                </div>
+			<p style="font-size: 1.2em; margin-top: 20px;">Runs the gene set enrichment analysis against a user-supplied ranked list of genes.</p>
+			<div class="row">
+				<div class="col-sm-4">
+					<p><strong>Author: </strong>Chet Birger, Broad Institute</p>
+				</div>
+                <div class="col-sm-4">
+                    <p><strong>Contact: </strong></p><p>gp-help@broadinstitute.org for GenePattern issues.</p>
+                    <p><a href="https://groups.google.com/forum/#!forum/gsea-help">GSEA forum</a> for GSEA questions.</p>
+<p></p>
+                </div>
+				<div class="col-sm-4">
+					<p><strong>Algorithm Version: 3.0</strong></p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<h2>Introduction</h2>
+
+<p>GSEAPreranked runs <strong>Gene Set Enrichment Analysis</strong> (GSEA) against a user-supplied, ranked list of genes.&nbsp; It determines whether <em>a priori</em> defined sets of genes show statistically significant enrichment at either end of the ranking.&nbsp; A statistically significant enrichment indicates that the biological activity (e.g., biomolecular pathway) characterized by the gene set is correlated with the user-supplied ranking.</p>
+
+<h2>Details</h2>
+
+<p><strong>Gene Set Enrichment Analysis</strong> (GSEA) is a powerful analytical method for interpreting gene expression data.&nbsp; It evaluates cumulative changes in the expression of groups of multiple genes defined based on prior biological knowledge.&nbsp;</p>
+
+<p>The GSEAPreranked module can be used to conduct gene set enrichment analysis on data that do not conform to the typical GSEA scenario. For example, it can be used when the ranking metric choices provided by the GSEA module are not appropriate for the data, or when a ranked list of genomic features deviates from traditional microarray expression data (e.g., GWAS results, ChIP-Seq, RNA-Seq, etc.).</p>
+
+<p>The user provides GSEAPreranked with a pre-ranked gene list.&nbsp; Paired with each gene in the list is the numeric ranking statistic, which GSEAPreranked uses to rank order genes in descending order. GSEAPreranked calculates an enrichment score for each gene set.&nbsp; A gene set’s enrichment score reflects how often members of that gene set occur at the top or bottom of the ranked data set (for example, in expression data, in either the most highly expressed genes or the most underexpressed genes).</p>
+
+<h3>The ranked list must not contain duplicate ranking values.</h3>
+
+<p>Duplicate ranking values may lead to arbitrary ordering of genes and to erroneous results.&nbsp; Therefore, it is important to make sure that the ranked list contains no duplicate ranking values.</p>
+
+<h3>Permutation test</h3>
+
+<p>In GSEAPreranked, permutations are always done by gene set. In standard GSEA, you can choose to set the parameter <em>Permutation type</em>&nbsp;to <em>phenotype</em>&nbsp;(the default) or&nbsp;<em>gene set</em>, but GSEAPreranked does not provide this option.</p>
+
+<h3>Understand and keep in mind how GSEAPreranked computes enrichment scores.</h3>
+
+<p>The GSEA PNAS 2005 paper introduced a method where a running sum statistic is incremented by the absolute value of the ranking metric when a gene belongs to the set. This method has proven to be efficient and facilitates intuitive interpretation of ranking metrics that reflect correlation of gene expression with phenotype. In the case of GSEAPreranked, you should make sure that this weighted scoring scheme applies to your choice of ranking statistic. If in doubt, we recommend using a more conservative scoring approach by setting&nbsp;<em>scoring scheme</em>&nbsp;parameter to <em>classic;</em> however, the scoring scheme parameter’s default value is <em>weighted</em>, the default value employed by the GSEA module.&nbsp; Please refer to the GSEA PNAS 2005 paper for further details.</p>
+
+<h2>References</h2>
+
+<p>Subramanian A, Tamayo P, Mootha VK, Mukherjee S, Ebert BL, Gillette MA, Paulovich A, Pomeroy SL, Golub TR, Lander ES, Mesirov JP. Gene set enrichment analysis: A knowledge-based approach for interpreting genome-wide expression profiles. <em>PNAS</em>. 2005;102(43);15545-15550. (<a href="http://www.pnas.org/content/102/43/15545.full.pdf.html">link</a>)</p>
+
+<p>Mootha VK, Lindgren CM, Eriksson K-F, Subramanian A, Sihag S, Lehar J, Puigserver P, Carlsson E, Ridderstrale M, Laurila E, Houstis N, Daly MJ, Patterson N, Mesivor JP, Golub TR, Tamayo P, Spiegelman B, Lander ES, Hirschhorn JN, Altshuler D, Groop LC.&nbsp; PGC-1-α responsive genes involved in oxidative phosphorylation are coordinately downregulated in human diabetes. <em>Nat Genet</em>. 2003;34:267-273. (<a href="http://www.nature.com/ng/journal/v34/n3/full/ng1180.html">link</a>)</p>
+
+<p>GSEA User Guide: <a href="http://www.gsea-msigdb.org/gsea/doc/GSEAUserGuideFrame.html">http://www.gsea-msigdb.org/gsea/doc/GSEAUserGuideFrame.html</a></p>
+
+<p>GSEA website: <a href="http://www.gsea-msigdb.org/">http://www.gsea-msigdb.org/</a></p>
+
+<p>This version of the module is based on the new open-source GSEA v3.0 code base.  See the 
+<a href="http://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/GSEA_v3.0_Release_Notes">Release Notes</a> for new features and other notable changes, and
+<a href="http://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Using_GSEA_v3.0_Features">this link</a> for some notes on new feature usage.  The algorithm is identical to the older v2.x code.
+</p>
+
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h2>Parameters</h2>
+
+<p><strong>NOTE</strong>: Certain parameters are considered to be "advanced"; that is, they control details of the GSEAPreranked algorithm that are typically not changed. You should not override the default values unless you are conversant with the algorithm.&nbsp; These parameters are marked "Advanced" in the parameter descriptions.</p>
+
+<table class="table table-striped" id="module_params_table">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td valign="top">ranked list&nbsp;<span style="color:red;">*</span></td>
+			<td valign="top">This is a file in <a href="http://www.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats#RNK:_Ranked_list_file_format_.28.2A.rnk.29">RNK</a> format that contains the rank ordered gene (or feature) list.</td>
+		</tr>
+        <tr>
+            <td valign="top">gene sets database&nbsp;<span style="color:red;">*</span></td>
+            <td valign="top">
+            <p>This parameter's drop-down allows you to select gene sets from the <a href="http://www.gsea-msigdb.org/gsea/msigdb/index.jsp">Molecular Signatures Database (MSigDB) </a>on the GSEA website. &nbsp;This drop-down provides access to only the most current version of MSigDB.&nbsp; You can also upload your own gene set file(s) in 
+            <a href="http://www.broadinstitute.org/cancer/software/genepattern/gp_guides/file-formats/sections/gmt">GMT</a>, <a href="http://www.broadinstitute.org/cancer/software/genepattern/gp_guides/file-formats/sections/gmx">GMX</a>, or 
+            <a href="http://www.broadinstitute.org/cancer/software/genepattern/gp_guides/file-formats/sections/grp">GRP</a> format.&nbsp;</p>
+
+            <p>If you want to use files from an earlier version of MSigDB you will need to download them from the archived releases on the <a href="http://www.gsea-msigdb.org/gsea/downloads.jsp">website</a>.
+            </td>
+        </tr>
+		<tr>
+			<td valign="top">number of permutations&nbsp;<span style="color:red;">*</span></td>
+			<td valign="top">Specifies the number of permutations to perform in assessing the statistical significance of the enrichment score. It is best to start with a small number, such as 10, in order to check that your analysis will complete successfully (e.g., ensuring you have gene sets that satisfy the minimum and maximum size requirements). After the analysis completes successfully, run it again with a full set of permutations. The recommended number of permutations is 1000. Default: 1000</td>
+		</tr>
+		<tr>
+			<td valign="top">scoring scheme&nbsp;<span style="color:red;">*</span></td>
+			<td valign="top">
+			<p>The enrichment statistic.&nbsp; This parameter affects the running-sum statistic used for the enrichment analysis, controlling the value of p used in the enrichment score calculation.&nbsp; Options are:</p>
+
+			<ul>
+				<li>classic: p=0</li>
+				<li>weighted (default): p=1; a running sum statistic that is incremented by the absolute value of the ranking metric when a gene belongs to the set (see the <a href="http://www.gsea-msigdb.org/gsea/doc/subramanian_tamayo_gsea_pnas.pdf">2005 PNAS paper</a> for details)</li>
+				<li>weighted_p2: p=2</li>
+				<li>weighted_p1.5: p=1.5</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">max gene set size&nbsp;<span style="color:red;">*</span></td>
+			<td valign="top">After filtering from the gene sets any gene not in the expression dataset, gene sets larger than this are excluded from the analysis. Default: 500</td>
+		</tr>
+		<tr>
+			<td valign="top">min gene set size&nbsp;<span style="color:red;">*</span></td>
+			<td valign="top">After filtering from the gene sets any gene not in the expression dataset, gene sets smaller than this are excluded from the analysis. Default: 15</td>
+		</tr>
+		<tr>
+			<td valign="top">normalization mode&nbsp;<span style="color:red;">*</span></td>
+			<td valign="top">
+			<p>Method used to normalize the enrichment scores across analyzed gene sets. Options are:</p>
+
+			<ul>
+				<li>meandiv (default): GSEA normalizes the enrichment scores as described in<a href="http://www.gsea-msigdb.org/gsea/doc/GSEAUserGuideTEXT.htm#_Normalized_Enrichment_Score"> Normalized Enrichment Score (NES)</a> in the GSEA User Guide.</li>
+				<li>None: GSEA does not normalize the enrichment scores.</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">make detailed gene set report <span style="color:red;">*</span></td>
+			<td valign="top">Create detailed gene set report (heat map, mountain plot, etc.) for each enriched gene set. Default: true</td>
+		</tr>
+		<tr>
+			<td valign="top">num top sets&nbsp;<span style="color:red;">*</span></td>
+			<td valign="top">GSEAPreranked generates summary plots and detailed analysis results for the top x genes in each phenotype, where x is 20 by default. The top genes are those with the largest normalized enrichment scores. Default: 20</td>
+		</tr>
+		<tr>
+			<td valign="top">random seed&nbsp;<span style="color:red;">*</span></td>
+			<td valign="top">Seed used to generate a random number for phenotype and gene_set permutations. Timestamp is the default. Using a specific integer-valued seed generates consistent results, which is useful when testing software.</td>
+		</tr>
+		<tr>
+			<td valign="top">output file name&nbsp;<span style="color:red;">*</span></td>
+			<td valign="top">Name of the output file. The name cannot include spaces. Default: &lt;expression.dataset_basename&gt;.zip</td>
+		</tr>
+        <tr>
+            <td valign="top">create svgs&nbsp;<span style="color:red;">*</span></td>
+            <td valign="top">Whether to create SVG images (compressed) along with PNGs. Saving PNGs requires <strong>a lot of storage</strong>; therefore, this parameter is set to false by default.&nbsp;</td>
+        </tr>
+        <tr>
+            <td valign="top">selected gene sets</td>
+            <td valign="top">Semicolon-separated list of gene sets from the provided gene sets database files (GMT/GMX/GRP).  If you are using multiple files then you *must* prefix each selected gene set with its file name followed by '#' (like "my_file1.gmt#selected_gene_set1,my_file2.gmt#selected_gene_set2").  With a single file only the names are necessary.  Leave this blank to select all gene sets.&nbsp;</td>
+        </tr>
+        <tr>
+            <td valign="top">alt delim</td>
+            <td valign="top">Optional alternate delimiter character for gene set names instead of comma for use with selected.gene.sets.  If used, a semicolon is recommended.&nbsp;</td>
+        </tr>
+	</tbody>
+</table>
+
+<p><span style="color: red;">*</span> - required</p>
+
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h2>Input Files</h2>
+
+<p style="margin: 5px 0px 16px; color: rgb(34, 34, 34);">1. <em>ranked list:&nbsp;</em>&nbsp;<a href="http://www.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats#RNK:_Ranked_list_file_format_.28.2A.rnk.29">RNK</a>&nbsp;file</p>
+
+<p style="margin: 5px 0px 16px 40px; color: rgb(34, 34, 34);">This file contains the rank ordered gene (or feature) list.</p>
+
+<p style="margin: 5px 0px 16px; color: rgb(34, 34, 34);">2.&nbsp;<em>gene sets database file:</em>&nbsp;<a href="http://www.broadinstitute.org/cancer/software/genepattern/gp_guides/file-formats/sections/gmt" style="color: rgb(102, 153, 255);">GMT</a>,&nbsp;<a href="http://www.broadinstitute.org/cancer/software/genepattern/gp_guides/file-formats/sections/gmx" style="color: rgb(102, 153, 255);">GMX</a>, or&nbsp;<a href="http://www.broadinstitute.org/cancer/software/genepattern/gp_guides/file-formats/sections/grp" style="color: rgb(102, 153, 255);">GRP</a>&nbsp;file</p>
+
+<p style="margin: 5px 0px 16px 40px; color: rgb(34, 34, 34);">Gene set files, either your own or from the listed MSigDB files.</p>
+
+<h2>Output Files</h2>
+
+<p>1. ZIP file containing the result files</p>
+
+<p style="margin-left: 40px;">For more information on interpreting these results, see&nbsp;<a href="http://www.gsea-msigdb.org/gsea/doc/GSEAUserGuideTEXT.htm#_Interpreting_GSEA_Results">Interpreting GSEA Results</a>&nbsp;in the GSEA User Guide.</p>
+
+<p>2. Enrichment Report: HTML and PNG images</p>
+
+<p style="margin-left: 40px;">The GSEA Enrichment Report. &nbsp;As above, see the GSEA User Guide for more info.</p>
+
+<p>3. Optional SVG images (compressed)</p>
+
+<p style="margin-left: 40px;">Identical to the PNGs in the Enrichment Report, but in SVG format for higher resolution.  These are GZ compressed to reduce space usage; they can be decompressed using 'gunzip' on Mac or Linux and 7-Zip on Windows</p>
+
+				</div>
+			</div>
+
+			<h2>Platform Dependencies</h2>
+
+			<div class="row">
+				<div class="col-md-3">
+					<p><strong>Task Type:</strong><br>
+					Gene List Selection</p>
+				</div>
+				<div class="col-md-3">
+					<p><strong>CPU Type:</strong><br>
+					any</p>
+				</div>
+				<div class="col-md-3">
+					<p><strong>Operating System:</strong><br>
+					any</p>
+				</div>
+				<div class="col-md-3">
+					<p><strong>Language:</strong><br>
+					Java</p>
+				</div>
+			</div>
+
+			<h2>Version Comments</h2>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Version</th>
+						<th>Release Date</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+                        <tr>
+                            <td>6</td>
+                            <td>Not yet released</td>
+                            <td>Beta series: Updating to use the GSEA v3.0 open-source code base.  Unified the Gene Set DB selector parameters and better downloading of MSigDB files.  Added selected.gene.sets, alt.delim and create.svgs parameters.  Better temp file clean-up and other internal code improvements.  Open-source release.</td>
+                        </tr>
+						<tr>
+							<td>5</td>
+							<td>2017-05-18</td>
+							<td>Updated to give access to MSigDB v6.0</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>2016-02-04</td>
+							<td>Updated to give access to MSigDB v5.1</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>2015-12-04</td>
+							<td>Updating the GSEA jar to deal with an issue with FTP access.  Fixes an issue for GP@IU.</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>2015-06-16</td>
+							<td>Updated for MSigDB v5.0 and hallmark gene sets support.</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>2013-06-17</td>
+							<td>Initial Release</td>
+						</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+
+	<footer class="container fluid gp-footer">
+    <div class="fluid text-center">Copyright © 2003-2017 Broad Institute, Inc., Massachusetts Institute of Technology, and Regents of the University of California.  All rights reserved.</div> 
+</footer>
+
+</body></html>

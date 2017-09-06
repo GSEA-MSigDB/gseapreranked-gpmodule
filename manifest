@@ -1,0 +1,235 @@
+# Copyright (c) 2003-2017 Broad Institute, Inc., Massachusetts Institute of Technology, and Regents of the University of California.  All rights reserved.
+#GSEAPreranked
+#Thu Dec 25 08:36:31 EST 2014
+JVMLevel=1.8
+LSID=urn\:lsid\:broad.mit.edu\:cancer.software.genepattern.module.analysis\:00317\:999999999
+author=David Eby, Chet Birger, Broad Institute
+commandLine=<run-with-env> -u "java/1.8" java <java_flags> -Djava.util.prefs.PreferencesFactory\=com.allaboutbalance.articles.disableprefs.DisabledPreferencesFactory -DGENE_SYMBOL_OVERRIDE\=true -Djava.awt.headless\=true -cp <libdir>commons-lang3-3.4.jar<path.separator><libdir>commons-io-2.4.jar<path.separator><libdir>commons-cli-1.2.jar<path.separator><libdir>gp-gsea.jar<path.separator><libdir>disable-prefs.jar<path.separator><libdir>gsea-3.0.jar org.genepattern.modules.gseapreranked.GseaPrerankedWrapper -gmx <gene.sets.database> -norm <normalization.mode> -nperm <number.of.permutations> -rnk <ranked.list> -scoring_scheme <scoring.scheme> -make_sets <make.detailed.gene.set.report> -plot_top_x <num.top.sets> -rnd_seed <random.seed> -set_max <max.gene.set.size> -set_min <min.gene.set.size> -create_svgs <create.svgs> <selected.gene.sets> <output.file.name> <alt.delim> -dev_mode <dev.mode> -create_zip <create.zip>
+cpuType=any
+description=Runs the gene set enrichment analysis against a user-supplied ranked list of genes.
+fileFormat=
+language=Java
+name=GSEAPreranked
+os=any
+
+p1_MODE=IN
+p1_TYPE=FILE
+p1_default_value=
+p1_description=Rank ordered gene list - .rnk
+p1_fileFormat=rnk
+p1_flag=
+p1_name=ranked.list
+p1_optional=
+p1_prefix=
+p1_prefix_when_specified=
+p1_type=java.io.File
+p1_value=
+
+p2_MODE=IN
+p2_TYPE=FILE
+p2_default_value=
+p2_description=Gene sets database from GSEA website.
+p2_fileFormat=gmt;gmx;grp
+p2_numValues=1+
+p2_flag=
+p2_name=gene.sets.database
+p2_optional=
+p2_prefix=
+p2_prefix_when_specified=
+p2_type=java.io.File
+p2_value=ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c1.all.v6.0.symbols.gmt\=c1.all.v6.0.symbols.gmt [Positional];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c2.all.v6.0.symbols.gmt\=c2.all.v6.0.symbols.gmt [Curated];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c2.cgp.v6.0.symbols.gmt\=c2.cgp.v6.0.symbols.gmt [Curated];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c2.cp.v6.0.symbols.gmt\=c2.cp.v6.0.symbols.gmt [Curated];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c2.cp.biocarta.v6.0.symbols.gmt\=c2.cp.biocarta.v6.0.symbols.gmt [Curated];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c2.cp.kegg.v6.0.symbols.gmt\=c2.cp.kegg.v6.0.symbols.gmt [Curated];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c2.cp.reactome.v6.0.symbols.gmt\=c2.cp.reactome.v6.0.symbols.gmt [Curated];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c3.all.v6.0.symbols.gmt\=c3.all.v6.0.symbols.gmt [Motif];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c3.mir.v6.0.symbols.gmt\=c3.mir.v6.0.symbols.gmt [Motif];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c3.tft.v6.0.symbols.gmt\=c3.tft.v6.0.symbols.gmt [Motif];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c4.all.v6.0.symbols.gmt\=c4.all.v6.0.symbols.gmt [Computational];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c4.cgn.v6.0.symbols.gmt\=c4.cgn.v6.0.symbols.gmt [Computational];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c4.cm.v6.0.symbols.gmt\=c4.cm.v6.0.symbols.gmt [Computational];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c5.all.v6.0.symbols.gmt\=c5.all.v6.0.symbols.gmt [Gene Ontology];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c5.bp.v6.0.symbols.gmt\=c5.bp.v6.0.symbols.gmt [Gene Ontology];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c5.cc.v6.0.symbols.gmt\=c5.cc.v6.0.symbols.gmt [Gene Ontology];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c5.mf.v6.0.symbols.gmt\=c5.mf.v6.0.symbols.gmt [Gene Ontology];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c6.all.v6.0.symbols.gmt\=c6.all.v6.0.symbols.gmt [Oncogenic Signatures];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c7.all.v6.0.symbols.gmt\=c7.all.v6.0.symbols.gmt [Immunologic signatures];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/h.all.v6.0.symbols.gmt\=h.all.v6.0.symbols.gmt [Hallmarks]
+
+p3_MODE=
+p3_TYPE=Integer
+p3_default_value=1000
+p3_description=Number of permutations to perform
+p3_fileFormat=
+p3_flag=
+p3_name=number.of.permutations
+p3_optional=
+p3_prefix=
+p3_prefix_when_specified=
+p3_type=java.lang.Integer
+p3_value=
+
+p4_MODE=
+p4_TYPE=TEXT
+p4_default_value=weighted
+p4_description=The statistic used to score hits (gene set members) and misses (non-members)
+p4_fileFormat=
+p4_flag=
+p4_name=scoring.scheme
+p4_optional=
+p4_prefix=
+p4_prefix_when_specified=
+p4_type=java.lang.String
+p4_value=classic;weighted;weighted_p2;weighted_p1.5
+
+p5_MODE=
+p5_TYPE=Integer
+p5_default_value=500
+p5_description=Gene sets larger than this are excluded from the analysis
+p5_fileFormat=
+p5_flag=
+p5_name=max.gene.set.size
+p5_optional=
+p5_prefix=
+p5_prefix_when_specified=
+p5_type=java.lang.Integer
+p5_value=
+
+p6_MODE=
+p6_TYPE=Integer
+p6_default_value=15
+p6_description=Gene sets smaller than this are excluded from the analysis
+p6_fileFormat=
+p6_flag=
+p6_name=min.gene.set.size
+p6_optional=
+p6_prefix=
+p6_prefix_when_specified=
+p6_type=java.lang.Integer
+p6_value=
+
+p7_MODE=
+p7_TYPE=TEXT
+p7_default_value=meandiv
+p7_description=Normalization mode
+p7_fileFormat=
+p7_flag=
+p7_name=normalization.mode
+p7_optional=
+p7_prefix=
+p7_prefix_when_specified=
+p7_type=java.lang.String
+p7_value=meandiv;None
+
+p8_MODE=
+p8_TYPE=TEXT
+p8_default_value=true
+p8_description=Create detailed gene set report (heat map, mountain plot, etc.) for every enriched gene set
+p8_fileFormat=
+p8_flag=
+p8_name=make.detailed.gene.set.report
+p8_optional=
+p8_prefix=
+p8_prefix_when_specified=
+p8_type=java.lang.String
+p8_value=false;true
+
+p9_MODE=
+p9_TYPE=Integer
+p9_default_value=20
+p9_description=Plot GSEA mountain and related plots for the top sets of each phenotype
+p9_fileFormat=
+p9_flag=
+p9_name=num.top.sets
+p9_optional=
+p9_prefix=
+p9_prefix_when_specified=
+p9_type=java.lang.Integer
+p9_value=
+
+p10_MODE=
+p10_TYPE=TEXT
+p10_default_value=timestamp
+p10_description=Seed to use for generating random permutations.
+p10_fileFormat=
+p10_flag=
+p10_name=random.seed
+p10_optional=
+p10_prefix=
+p10_prefix_when_specified=
+p10_type=java.lang.String
+p10_value=
+
+p11_MODE=
+p11_TYPE=TEXT
+p11_default_value=false
+p11_description=Whether to create SVG images (compressed) along with PNGs
+p11_fileFormat=
+p11_flag=
+p11_name=create.svgs
+p11_optional=
+p11_prefix=
+p11_prefix_when_specified=
+p11_type=java.lang.String
+p11_value=false;true
+
+p12_MODE=
+p12_TYPE=TEXT
+p12_default_value=<ranked.list_basename>.zip
+p12_description=Name of the output file.  Note that this only applies if create.zip=true.
+p12_fileFormat=
+p12_flag=
+p12_name=output.file.name
+p12_optional=on
+p12_prefix=
+p12_prefix_when_specified=-output_file_name 
+p12_type=java.lang.String
+p12_value=
+
+p13_MODE=
+p13_TYPE=TEXT
+p13_default_value=
+p13_description=Semicolon-separated list of gene sets from the provided gene sets database files (GMT/GMX/GRP).  If you are using multiple files then you *must* prefix each selected gene set with its file name followed by '#' (like "my_file1.gmt#selected_gene_set1,my_file2.gmt#selected_gene_set2").  With a single file only the names are necessary.  Leave this blank to select all gene sets.
+p13_fileFormat=
+p13_flag=
+p13_name=selected.gene.sets
+p13_optional=on
+p13_prefix=
+p13_prefix_when_specified=-selected_gene_sets 
+p13_type=java.lang.String
+p13_value=
+
+p14_MODE=
+p14_TYPE=TEXT
+p14_default_value=
+p14_description=Optional alternate delimiter character for gene set names instead of comma for use with selected.gene.sets.  If used, a semicolon is recommended.
+p14_fileFormat=
+p14_flag=
+p14_name=alt.delim
+p14_optional=on
+p14_prefix=
+p14_prefix_when_specified=--altDelim=
+p14_type=java.lang.String
+p14_value=
+
+p15_MODE=
+p15_TYPE=TEXT
+p15_default_value=true
+p15_description=Create a ZIP bundle of the output files.
+p15_fileFormat=
+p15_flag=
+p15_name=create.zip
+p15_optional=
+p15_prefix=
+p15_prefix_when_specified=
+p15_type=java.lang.String
+p15_value=false;true
+
+p16_MODE=
+p16_TYPE=TEXT
+p16_default_value=false
+p16_description=Enable developer mode.
+p16_fileFormat=
+p16_flag=
+p16_name=dev.mode
+p16_optional=
+p16_prefix=
+p16_prefix_when_specified=
+p16_type=java.lang.String
+p16_value=false;true
+
+pipelineModel=
+privacy=private
+publicationDate=06/19/2013 13\:49 
+quality=production
+requiredPatchLSIDs=
+requiredPatchURLs=
+serializedModel=
+taskDoc=doc.html
+taskType=Gene List Selection
+category=beta
+userid=eby@broadinstitute.org
+version=Beta series: Updating to use the GSEA v3.0 open-source code base.  Unified the Gene Set DB selector parameters and better downloading of MSigDB files.  Added selected.gene.sets, alt.delim and create.svgs parameters.  Better temp file clean-up and other internal code improvements.  Open-source release.

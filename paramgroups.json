@@ -1,0 +1,5 @@
+[{name: "Basic parameters", description: "These parameters are essential for the analysis.", parameters: ["ranked.list", "gene.sets.database", "number.of.permutations", "output.file.name" ]},
+ {name: "Advanced parameters", description: "Additional parameters with standard defaults; typically you will run GSEA with these parameters set to their default values.", hidden: false},
+   {name: "Advanced parameters/Algorithmic", hidden: true, parameters: ["scoring.scheme", "max.gene.set.size", "min.gene.set.size", "normalization.mode", "random.seed", "selected.gene.sets", "dev.mode", "alt.delim"]},
+   {name: "Advanced parameters/Reporting", hidden: true, parameters: ["num.top.sets", "make.detailed.gene.set.report", "create.svgs", "create.zip"]}
+]
