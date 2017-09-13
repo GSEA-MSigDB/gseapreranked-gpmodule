@@ -8,7 +8,7 @@ See the [module documentation](https://gsea-msigdb.github.io/gseapreranked-gpmod
 
 # License
 
-GSEA Desktop and the GSEA Preranked module for GenePattern are made available under the terms of a BSD-style license, a copy of which is included in the distribution in the [LICENSE.txt](LICENSE.txt) file.  See that file for exact terms and conditions.
+The GSEA Preranked module for GenePattern is made available under the terms of a BSD-style license, a copy of which is included in the distribution in the [LICENSE.txt](LICENSE.txt) file.  See that file for exact terms and conditions. 
 
 #  Latest Version
 The latest binary release of this software can be obtained from the GenePattern module repository, available from the Administration screen of the web UI.  It is currently in Beta release as v6.x. 
