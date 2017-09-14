@@ -1,4 +1,4 @@
-Third-Party Components Acknowledgments for the GSEA Preranked module
+Third-Party Components Acknowledgments for the GSEAPreranked module
 ------------------------------------------- 
 
 The GSEA Preranked module for GenePattern is distributed, in part, under and subject to the provisions of licenses for:

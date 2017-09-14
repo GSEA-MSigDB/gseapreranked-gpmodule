@@ -8,7 +8,7 @@ See the [module documentation](https://gsea-msigdb.github.io/gseapreranked-gpmod
 
 # License
 
-The GSEA Preranked module for GenePattern is made available under the terms of a BSD-style license, a copy of which is included in the distribution in the [LICENSE.txt](LICENSE.txt) file.  See that file for exact terms and conditions.
+The GSEAPreranked module for GenePattern is made available under the terms of a BSD-style license, a copy of which is included in the distribution in the [LICENSE.txt](LICENSE.txt) file.  See that file for exact terms and conditions.
 
 The module relies upon the GSEA Desktop JAR.  See the [GSEA Desktop GitHub repository](https://github.com/GSEA-MSigDB/gsea-desktop) for information about its license.
 
