@@ -62,7 +62,7 @@ p4_optional=
 p4_prefix=
 p4_prefix_when_specified=
 p4_type=java.lang.String
-p4_value=classic\=classic Kolmorogrov-Smirnov;weighted;weighted_p2;weighted_p1.5
+p4_value=classic\=classic Kolmorogorov-Smirnov;weighted;weighted_p2;weighted_p1.5
 
 p5_MODE=
 p5_TYPE=Integer
