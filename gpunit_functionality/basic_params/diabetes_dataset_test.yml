@@ -31,6 +31,3 @@ assertions:
             "gene_sets.gmt":
                diffCmd: diff -q --strip-trailing-cr
                diff: "<%gpunit.resultData%>gpunit/GSEAPreranked/v6/output/basic_params/diabetes_dataset_test/gene_sets.gmt"
-            "Diabetes_collapsed_symbols.rnk":
-               diffCmd: diff -q --strip-trailing-cr
-               diff: "<%gpunit.resultData%>gpunit/GSEAPreranked/v6/output/basic_params/diabetes_dataset_test/Diabetes_collapsed_symbols.rnk"

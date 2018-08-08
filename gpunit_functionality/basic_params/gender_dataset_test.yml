@@ -32,6 +32,3 @@ assertions:
             "gene_sets.gmt":
                diffCmd: diff -q --strip-trailing-cr
                diff: "<%gpunit.resultData%>gpunit/GSEAPreranked/v6/output/basic_params/gender_dataset_test/gene_sets.gmt"
-            "Gender_collapsed_symbols.rnk":
-               diffCmd: diff -q --strip-trailing-cr
-               diff: "<%gpunit.resultData%>gpunit/GSEAPreranked/v6/output/basic_params/gender_dataset_test/Gender_collapsed_symbols.rnk"
