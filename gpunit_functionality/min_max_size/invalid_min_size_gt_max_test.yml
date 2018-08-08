@@ -1,0 +1,30 @@
+# Copyright (c) 2003-2018 Broad Institute, Inc., Massachusetts Institute of Technology, and Regents of the University of California.  All rights reserved.
+#module: urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00317:6
+module: GSEAPreranked
+name: GSEAPreranked invalid_min_size_gt_max_test
+description: Test a minimum gene set size that will cause an error (min > max).  Variation of user_gene_set_test.
+params:
+       ranked.list: "<%gpunit.testData%>gpunit/GSEAPreranked/v6/input/GSE36287_1904.rnk"
+       gene.sets.database: [ "<%gpunit.testData%>gpunit/GSEAPreranked/v6/input/c1.symbols.reduced.gmt" ]
+       number.of.permutations: "10"
+       output.file.name: "<ranked.list_basename>.zip"
+       scoring.scheme: "weighted"
+       max.gene.set.size: "500"
+       min.gene.set.size: "15000"
+       normalization.mode: "meandiv"
+       randomization.mode: "no_balance"
+       # Note that we use a fixed random seed rather than the 'timestamp' default so that we'll have reproducible test results
+       random.seed: "149"
+       create.svgs: "false"
+       num.top.sets: "20"
+       make.detailed.gene.set.report: "false"
+       selected.gene.sets: ""
+       dev.mode: "true"
+       alt.delim: ""
+       create.zip: "true"
+assertions:
+        jobStatus: fail
+        files:
+            "stderr.txt":
+                diffCmd: ../diffFirstLineOnly.sh
+                diff: "<%gpunit.resultData%>gpunit/GSEAPreranked/v6/output/min_max_size/invalid_min_size_gt_max_test/stderr.txt"

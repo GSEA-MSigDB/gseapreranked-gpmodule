@@ -1,0 +1,30 @@
+# Copyright (c) 2003-2018 Broad Institute, Inc., Massachusetts Institute of Technology, and Regents of the University of California.  All rights reserved.
+#module: urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00317:6
+module: GSEAPreranked
+name: GSEAPreranked valid_user_gmt_subset_test
+description: Test GSEAPreranked using the Diabetes dataset with subset-select out of a user-provided GMT.
+params:
+       ranked.list: "<%gpunit.testData%>gpunit/GSEAPreranked/v6/input/Diabetes_collapsed_symbols.rnk"
+       gene.sets.database: [ "<%gpunit.testData%>gpunit/GSEAPreranked/v6/input/c1.symbols.reduced.gmt" ]
+       number.of.permutations: "100"
+       output.file.name: "<ranked.list_basename>.zip"
+       scoring.scheme: "weighted"
+       max.gene.set.size: "500"
+       min.gene.set.size: "15"
+       normalization.mode: "meandiv"
+       randomization.mode: "no_balance"
+       # Note that we use a fixed random seed rather than the 'timestamp' default so that we'll have reproducible test results
+       random.seed: "149"
+       create.svgs: "false"
+       num.top.sets: "20"
+       make.detailed.gene.set.report: "false"
+       selected.gene.sets: "c1.symbols.reduced.gmt#CHR13Q12,c1.symbols.reduced.gmt#CHR8Q11,c1.symbols.reduced.gmt#CHR13Q14,c1.symbols.reduced.gmt#CHR14Q11,c1.symbols.reduced.gmt#CHRYQ11"
+       dev.mode: "true"
+       alt.delim: ""
+       create.zip: "true"
+assertions:
+        jobStatus: success
+        files:
+            "Diabetes_collapsed_symbols.zip":
+                diffCmd: ../diffGseaResults.sh
+                diff: "<%gpunit.resultData%>gpunit/GSEAPreranked/v6/output/subset_select/valid_user_gmt_subset_test/Diabetes_collapsed_symbols.zip"

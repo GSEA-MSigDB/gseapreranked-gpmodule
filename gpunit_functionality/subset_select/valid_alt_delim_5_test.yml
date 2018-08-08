@@ -1,0 +1,30 @@
+# Copyright (c) 2003-2018 Broad Institute, Inc., Massachusetts Institute of Technology, and Regents of the University of California.  All rights reserved.
+#module: urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00317:6
+module: GSEAPreranked
+name: GSEAPreranked valid_alt_delim_5_test
+description: Test GSEAPreranked using the Diabetes dataset with subset-select out of a user-provided GMT based on C1 (synthetic gene sets with comma in the name), with semicolon as an alternate delimiter and full file name specifiers.
+params:
+       ranked.list: "<%gpunit.testData%>gpunit/GSEAPreranked/v6/input/Diabetes_collapsed_symbols.rnk"
+       gene.sets.database: [ "<%gpunit.testData%>gpunit/GSEA/v19/input/c1.symbols.reduced.fake_for_alt_delim_test.gmt" ]
+       number.of.permutations: "100"
+       output.file.name: "<ranked.list_basename>.zip"
+       scoring.scheme: "weighted"
+       max.gene.set.size: "500"
+       min.gene.set.size: "15"
+       normalization.mode: "meandiv"
+       randomization.mode: "no_balance"
+       # Note that we use a fixed random seed rather than the 'timestamp' default so that we'll have reproducible test results
+       random.seed: "149"
+       create.svgs: "false"
+       num.top.sets: "20"
+       make.detailed.gene.set.report: "false"
+       selected.gene.sets: "c1.symbols.reduced.fake_for_alt_delim_test.gmt#chr,8q11;c1.symbols.reduced.fake_for_alt_delim_test.gmt#chr,13q12;c1.symbols.reduced.fake_for_alt_delim_test.gmt#chr,1q25;c1.symbols.reduced.fake_for_alt_delim_test.gmt#chr,13q14;c1.symbols.reduced.fake_for_alt_delim_test.gmt#chr,1p35"
+       dev.mode: "true"
+       alt.delim: ";"
+       create.zip: "true"
+assertions:
+        jobStatus: success
+        files:
+            "Diabetes_collapsed_symbols.zip":
+                diffCmd: ../diffGseaResults.sh
+                diff: "<%gpunit.resultData%>gpunit/GSEAPreranked/v6/output/subset_select/valid_alt_delim_5_test/Diabetes_collapsed_symbols.zip"
