@@ -1,5 +1,5 @@
 /bin/
 /build/
-/gp-gsea.jar
+/GSEAPreranked_gp.jar
 /gpunit_functionality/test_runs
 /gpunit_functionality/gpunit.runtime_*.properties
