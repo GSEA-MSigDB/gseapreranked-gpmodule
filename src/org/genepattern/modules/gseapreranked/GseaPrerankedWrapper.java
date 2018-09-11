@@ -1,5 +1,5 @@
 /*
- *  Copyright (c) 2003-2017 Broad Institute, Inc., Massachusetts Institute of Technology, and Regents of the University of California.  All rights reserved.
+ *  Copyright (c) 2003-2018 Broad Institute, Inc., Massachusetts Institute of Technology, and Regents of the University of California.  All rights reserved.
  */
 package org.genepattern.modules.gseapreranked;
 
@@ -27,7 +27,6 @@ import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.filefilter.FileFileFilter;
 import org.apache.commons.lang3.StringUtils;
 
-import edu.mit.broad.genome.utils.ZipUtility;
 import xtools.api.param.BadParamException;
 import xtools.gsea.GseaPreranked;
 
@@ -150,12 +149,7 @@ public class GseaPrerankedWrapper {
                     if (!analysis.exists()) return;
                     try {
                         if (createZip) {
-                        	// Working around a bug in the GSEA 'create ZIP' code; we'll do it here ourselves
-                        	// rather than relying on GSEA.
-                        	File zipFile = new File(cwd, zipFileName);
-                        	ZipUtility zipUtility = new ZipUtility();
-                        	zipUtility.zipDir(analysis, zipFile);
-                            //copyZipToJobIfPresent(analysis, zipFileName, cwd);
+                            copyZipToJobIfPresent(analysis, zipFileName, cwd);
                         }
                     }
                     finally {
@@ -263,10 +257,7 @@ public class GseaPrerankedWrapper {
             printParam("out", analysis.getPath(), writer);
 
             printParam("rpt_label", FilenameUtils.getBaseName(outputFileName), writer);
-            // Temporarily suppressing GSEA's 'create ZIP' due to a bug in v3.0.  Do it ourselves on shutdown.
-            //printParam("zip_report", Boolean.toString(createZip), writer);
-            printParam("zip_report", "false", writer);
-
+            printParam("zip_report", Boolean.toString(createZip), writer);
             printParam("gui", "false", writer);
 
             if (StringUtils.isNotBlank(altDelim)) {
@@ -316,7 +307,6 @@ public class GseaPrerankedWrapper {
         printParam(optionName, commandLine.getOptionValue(optionName), writer);
     }
 
-    // Not using this just now while we work around the GSEA 'create ZIP' bug.
     private static void copyZipToJobIfPresent(final File analysis, String zipFileName, File cwd) throws InternalError {
         if (!analysis.exists()) return;
 
