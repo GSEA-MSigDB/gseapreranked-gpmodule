@@ -15,7 +15,7 @@ params:
        randomization.mode: "no_balance"
        # Note that we use a fixed random seed rather than the 'timestamp' default so that we'll have reproducible test results
        random.seed: "149"
-       create.svgs: "false"
+       create.svgs: "true"
        num.top.sets: "20"
        make.detailed.gene.set.report: "true"
        selected.gene.sets: ""
