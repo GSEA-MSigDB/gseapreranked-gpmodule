@@ -10,7 +10,7 @@ fileFormat=
 language=Java
 name=GSEAPreranked
 os=any
-job.docker.image=genepattern/docker-java18:0.1
+job.docker.image=genepattern/docker-java18\:0.1
 
 p1_MODE=IN
 p1_TYPE=FILE
