@@ -5,7 +5,7 @@ name: GSEAPreranked simple_real_data_test
 description: A simple test of GSEAPreranked using real data from the MSigDB curator and normal param settings.
 params:
        ranked.list: "<%gpunit.testData%>gpunit/GSEAPreranked/v6/input/GSE36287_1904.rnk"
-       gene.sets.database: [ "ftp://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c1.all.v6.0.symbols.gmt" ]
+       gene.sets.database: [ "https://data.broadinstitute.org/gsea-msigdb/msigdb/release/6.0/c1.all.v6.0.symbols.gmt" ]
        number.of.permutations: "1000"
        output.file.name: "<ranked.list_basename>.zip"
        scoring.scheme: "weighted"

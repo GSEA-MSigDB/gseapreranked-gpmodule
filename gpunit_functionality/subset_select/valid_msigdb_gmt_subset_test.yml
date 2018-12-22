@@ -5,7 +5,7 @@ name: GSEAPreranked valid_msigdb_gmt_subset_test
 description: Test GSEAPreranked using the Diabetes dataset with subset-select out of an MSigDB GMT.
 params:
        ranked.list: "<%gpunit.testData%>gpunit/GSEAPreranked/v6/input/Diabetes_collapsed_symbols.rnk"
-       gene.sets.database: [ "ftp://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c1.all.v6.0.symbols.gmt" ]
+       gene.sets.database: [ "https://data.broadinstitute.org/gsea-msigdb/msigdb/release/6.0/c1.all.v6.0.symbols.gmt" ]
        number.of.permutations: "100"
        output.file.name: "<ranked.list_basename>.zip"
        scoring.scheme: "weighted"
