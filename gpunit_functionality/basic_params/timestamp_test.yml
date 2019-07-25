@@ -1,11 +1,11 @@
-# Copyright (c) 2003-2018 Broad Institute, Inc., Massachusetts Institute of Technology, and Regents of the University of California.  All rights reserved.
-#module: urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00317:6
+# Copyright (c) 2003-2019 Broad Institute, Inc., Massachusetts Institute of Technology, and Regents of the University of California.  All rights reserved.
+#module: urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00317:7
 module: GSEAPreranked
 name: GSEAPreranked timestamp_test
 description: Test that the GSEAPreranked 'timestamp' random seed works.  Variation of simple_real_data_test.
 params:
-       ranked.list: "<%gpunit.testData%>gpunit/GSEAPreranked/v6/input/GSE36287_1904.rnk"
-       gene.sets.database: [ "<%gpunit.testData%>gpunit/GSEAPreranked/v6/input/c1.symbols.reduced.gmt" ]
+       ranked.list: "<%gpunit.testData%>gpunit/GSEAPreranked/v7/input/GSE36287_1904.rnk"
+       gene.sets.database: [ "<%gpunit.testData%>gpunit/GSEAPreranked/v7/input/c1.symbols.reduced.gmt" ]
        number.of.permutations: "10"
        output.file.name: "<ranked.list_basename>.zip"
        scoring.scheme: "weighted"

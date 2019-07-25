@@ -1,11 +1,11 @@
-# Copyright (c) 2003-2018 Broad Institute, Inc., Massachusetts Institute of Technology, and Regents of the University of California.  All rights reserved.
-#module: urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00317:6
+# Copyright (c) 2003-2019 Broad Institute, Inc., Massachusetts Institute of Technology, and Regents of the University of California.  All rights reserved.
+#module: urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00317:7
 module: GSEAPreranked
 name: GSEAPreranked norm_mode_None_test
 description: Test with normalization.mode=None.  Variation of user_gene_set_test.
 params:
-       ranked.list: "<%gpunit.testData%>gpunit/GSEAPreranked/v6/input/GSE36287_1904.rnk"
-       gene.sets.database: [ "<%gpunit.testData%>gpunit/GSEAPreranked/v6/input/c1.symbols.reduced.gmt" ]
+       ranked.list: "<%gpunit.testData%>gpunit/GSEAPreranked/v7/input/GSE36287_1904.rnk"
+       gene.sets.database: [ "<%gpunit.testData%>gpunit/GSEAPreranked/v7/input/c1.symbols.reduced.gmt" ]
        number.of.permutations: "10"
        output.file.name: "<ranked.list_basename>.zip"
        scoring.scheme: "weighted"
@@ -27,4 +27,4 @@ assertions:
         files:
             "GSE36287_1904.zip":
                 diffCmd: ../diffGseaResults.sh
-                diff: "<%gpunit.resultData%>gpunit/GSEAPreranked/v6/output/adv_params/norm_mode_None_test/GSE36287_1904.zip"
+                diff: "<%gpunit.resultData%>gpunit/GSEAPreranked/v7/output/adv_params/norm_mode_None_test/GSE36287_1904.zip"

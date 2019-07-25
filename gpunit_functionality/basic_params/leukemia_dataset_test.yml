@@ -1,11 +1,11 @@
-# Copyright (c) 2003-2018 Broad Institute, Inc., Massachusetts Institute of Technology, and Regents of the University of California.  All rights reserved.
-#module: urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00317:6
+# Copyright (c) 2003-2019 Broad Institute, Inc., Massachusetts Institute of Technology, and Regents of the University of California.  All rights reserved.
+#module: urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00317:7
 module: GSEAPreranked
 name: GSEAPreranked leukemia_dataset_test
 description: A simple test of GSEAPreranked using a dataset based on a Leukemia run from GSEA.  Also tests providing a blank output.file.name.
 params:
-       ranked.list: "<%gpunit.testData%>gpunit/GSEAPreranked/v6/input/Leukemia_collapsed_symbols.rnk"
-       gene.sets.database: [ "<%gpunit.testData%>gpunit/GSEAPreranked/v6/input/c1.symbols.reduced.gmt" ]
+       ranked.list: "<%gpunit.testData%>gpunit/GSEAPreranked/v7/input/Leukemia_collapsed_symbols.rnk"
+       gene.sets.database: [ "<%gpunit.testData%>gpunit/GSEAPreranked/v7/input/c1.symbols.reduced.gmt" ]
        number.of.permutations: "10"
        # Need to pass a single space, or GpUnit treats this as a declaration to skip the parameter altogether
        output.file.name: " "
@@ -30,7 +30,7 @@ assertions:
             "gsea_analysis.zip": !!null
             "results.edb":
                diffCmd: diff -q --strip-trailing-cr
-               diff: "<%gpunit.resultData%>gpunit/GSEAPreranked/v6/output/basic_params/leukemia_dataset_test/results.edb"
+               diff: "<%gpunit.resultData%>gpunit/GSEAPreranked/v7/output/basic_params/leukemia_dataset_test/results.edb"
             "gene_sets.gmt":
                diffCmd: diff -q --strip-trailing-cr
-               diff: "<%gpunit.resultData%>gpunit/GSEAPreranked/v6/output/basic_params/leukemia_dataset_test/gene_sets.gmt"
+               diff: "<%gpunit.resultData%>gpunit/GSEAPreranked/v7/output/basic_params/leukemia_dataset_test/gene_sets.gmt"

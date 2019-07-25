@@ -1,10 +1,10 @@
-# Copyright (c) 2003-2018 Broad Institute, Inc., Massachusetts Institute of Technology, and Regents of the University of California.  All rights reserved.
-#module: urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00317:6
+# Copyright (c) 2003-2019 Broad Institute, Inc., Massachusetts Institute of Technology, and Regents of the University of California.  All rights reserved.
+#module: urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00317:7
 module: GSEAPreranked
 name: GSEAPreranked multi_msigdb_gmt_test
 description: A test of GSEAPreranked using real data from the MSigDB curator and multiple MSigDB GMTs.  Variation of user_gene_set_test.
 params:
-       ranked.list: "<%gpunit.testData%>gpunit/GSEAPreranked/v6/input/GSE36287_1904.rnk"
+       ranked.list: "<%gpunit.testData%>gpunit/GSEAPreranked/v7/input/GSE36287_1904.rnk"
        gene.sets.database: [ "https://data.broadinstitute.org/gsea-msigdb/msigdb/release/6.0/c1.all.v6.0.symbols.gmt", "https://data.broadinstitute.org/gsea-msigdb/msigdb/release/6.0/c2.cp.kegg.v6.0.symbols.gmt" ]
        number.of.permutations: "100"
        output.file.name: "<ranked.list_basename>.zip"
@@ -27,4 +27,4 @@ assertions:
         files:
             "GSE36287_1904.zip":
                 diffCmd: ../diffGseaResults.sh
-                diff: "<%gpunit.resultData%>gpunit/GSEAPreranked/v6/output/basic_params/multi_msigdb_gmt_test/GSE36287_1904.zip"
+                diff: "<%gpunit.resultData%>gpunit/GSEAPreranked/v7/output/basic_params/multi_msigdb_gmt_test/GSE36287_1904.zip"

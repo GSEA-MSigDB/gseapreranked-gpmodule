@@ -1,11 +1,11 @@
-# Copyright (c) 2003-2018 Broad Institute, Inc., Massachusetts Institute of Technology, and Regents of the University of California.  All rights reserved.
-#module: urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00317:6
+# Copyright (c) 2003-2019 Broad Institute, Inc., Massachusetts Institute of Technology, and Regents of the University of California.  All rights reserved.
+#module: urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00317:7
 module: GSEAPreranked
 name: GSEAPreranked invalid_max_size_test
 description: Test a maximum gene set size that will cause an error (all gene sets are too large; more accurately, all gene sets are excluded based on *either* the max or min).  Variation of user_gene_set_test.
 params:
-       ranked.list: "<%gpunit.testData%>gpunit/GSEAPreranked/v6/input/GSE36287_1904.rnk"
-       gene.sets.database: [ "<%gpunit.testData%>gpunit/GSEAPreranked/v6/input/c1.symbols.reduced.gmt" ]
+       ranked.list: "<%gpunit.testData%>gpunit/GSEAPreranked/v7/input/GSE36287_1904.rnk"
+       gene.sets.database: [ "<%gpunit.testData%>gpunit/GSEAPreranked/v7/input/c1.symbols.reduced.gmt" ]
        number.of.permutations: "10"
        output.file.name: "<ranked.list_basename>.zip"
        scoring.scheme: "weighted"
@@ -28,4 +28,4 @@ assertions:
             "stderr.txt":
                 diffCmd: ../grepMessage.sh xtools.api.param.BadParamException..After.pruning..none.of.the.gene.sets.passed.size.thresholds
                 # The following file is unused; keeping it just for reference.
-                diff: "<%gpunit.resultData%>gpunit/GSEAPreranked/v6/output/min_max_size/invalid_max_size_test/stderr.txt"
+                diff: "<%gpunit.resultData%>gpunit/GSEAPreranked/v7/output/min_max_size/invalid_max_size_test/stderr.txt"
