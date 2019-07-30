@@ -3,7 +3,7 @@
 JVMLevel=11
 LSID=urn\:lsid\:broad.mit.edu\:cancer.software.genepattern.module.analysis\:00317\:999999999
 author=Chet Birger, David Eby, Broad Institute
-commandLine=<libdir>/gsea-cli.sh GSEAPreranked -gmx <gene.sets.database> -norm <normalization.mode> -nperm <number.of.permutations> -rnk <ranked.list> -scoring_scheme <scoring.scheme> -make_sets <make.detailed.gene.set.report> -plot_top_x <num.top.sets> -rnd_seed <random.seed> -set_max <max.gene.set.size> -set_min <min.gene.set.size> -create_svgs <create.svgs> <selected.gene.sets> <output.file.name> <alt.delim> -dev_mode <dev.mode> -create_zip <create.zip>
+commandLine=<libdir>/gsea-cli.sh GSEAPreranked -gmx <gene.sets.database> -norm <normalization.mode> -nperm <number.of.permutations> -rnk <ranked.list> -scoring_scheme <scoring.scheme> -make_sets <make.detailed.gene.set.report> -plot_top_x <num.top.sets> -rnd_seed <random.seed> -set_max <max.gene.set.size> -set_min <min.gene.set.size> -create_svgs <create.svgs> <selected.gene.sets> <output.file.name> <alt.delim> -dev_mode <dev.mode> -zip_report <create.zip> -run_as_genepattern true
 cpuType=any
 description=Runs the gene set enrichment analysis against a user-supplied ranked list of genes.
 fileFormat=
