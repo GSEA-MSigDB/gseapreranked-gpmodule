@@ -7,6 +7,10 @@ params:
        ranked.list: "<%gpunit.testData%>gpunit/GSEAPreranked/v7/input/Diabetes_collapsed_symbols.rnk"
        gene.sets.database: [ "<%gpunit.testData%>gpunit/GSEAPreranked/v7/input/c1.symbols.reduced.fake_for_alt_delim_test.gmt" ]
        number.of.permutations: "100"
+       collapse.dataset: "No_Collapse"
+       chip.platform.file: ""
+       omit.features.with.no.symbol.match: "true"
+       collapsing.mode.for.probe.sets.with.more.than.one.match: "Max_probe"
        output.file.name: "<ranked.list_basename>.zip"
        scoring.scheme: "weighted"
        max.gene.set.size: "500"

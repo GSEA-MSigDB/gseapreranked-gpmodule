@@ -1,22 +1,23 @@
 # Copyright (c) 2003-2019 Broad Institute, Inc., Massachusetts Institute of Technology, and Regents of the University of California.  All rights reserved.
 #module: urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00317:7
 module: GSEAPreranked
-name: GSEAPreranked norm_mode_None_test
-description: Test with normalization.mode=None.  Variation of user_gene_set_test.
+name: GSEAPreranked collapse_remap_only_test
+description: Test the GSEA 'collapse dataset' function, remapping only (no collapse). This uses a fake ranked list based on the P53 dataset.
 params:
-       ranked.list: "<%gpunit.testData%>gpunit/GSEAPreranked/v7/input/GSE36287_1904.rnk"
+       ranked.list: "<%gpunit.testData%>gpunit/GSEAPreranked/v7/input/Diabetes_msigdb7_collapsed.rnk"
        gene.sets.database: [ "<%gpunit.testData%>gpunit/GSEAPreranked/v7/input/c1.symbols.reduced.gmt" ]
        number.of.permutations: "10"
-       collapse.dataset: "No_Collapse"
-       chip.platform.file: ""
-       omit.features.with.no.symbol.match: "true"
-       collapsing.mode.for.probe.sets.with.more.than.one.match: "Max_probe"
-       output.file.name: "<ranked.list_basename>.zip"
+       collapse.dataset: "Remap_Only"
+       chip.platform.file: "<%gpunit.testData%>gpunit/GSEAPreranked/v7/input/Human_Symbol_with_Remapping_MSigDB.v7.0.chip"
+       # Changing the output.file.name for ease of testing
+       output.file.name: "<ranked.list_basename>_remapped.zip"
        scoring.scheme: "weighted"
        max.gene.set.size: "500"
        min.gene.set.size: "15"
-       normalization.mode: "None"
+       collapsing.mode.for.probe.sets.with.more.than.one.match: "Max_probe"
+       normalization.mode: "meandiv"
        randomization.mode: "no_balance"
+       omit.features.with.no.symbol.match: "true"
        # Note that we use a fixed random seed rather than the 'timestamp' default so that we'll have reproducible test results
        random.seed: "149"
        create.svgs: "false"
@@ -29,6 +30,6 @@ params:
 assertions:
         jobStatus: success
         files:
-            "GSE36287_1904.zip":
+            "Diabetes_msigdb7_collapsed_remapped.zip":
                 diffCmd: ../diffGseaResults.sh
-                diff: "<%gpunit.resultData%>gpunit/GSEAPreranked/v7/output/adv_params/norm_mode_None_test/GSE36287_1904.zip"
+                diff: "<%gpunit.resultData%>gpunit/GSEAPreranked/v7/output/collapse/collapse_remap_only_test/Diabetes_msigdb7_collapsed_remapped.zip"

@@ -7,6 +7,10 @@ params:
        ranked.list: "<%gpunit.testData%>gpunit/GSEAPreranked/v7/input/Leukemia_collapsed_symbols.rnk"
        gene.sets.database: [ "<%gpunit.testData%>gpunit/GSEAPreranked/v7/input/c1.symbols.reduced.gmt" ]
        number.of.permutations: "10"
+       collapse.dataset: "No_Collapse"
+       chip.platform.file: ""
+       omit.features.with.no.symbol.match: "true"
+       collapsing.mode.for.probe.sets.with.more.than.one.match: "Max_probe"
        # Need to pass a single space, or GpUnit treats this as a declaration to skip the parameter altogether
        output.file.name: " "
        scoring.scheme: "weighted"
