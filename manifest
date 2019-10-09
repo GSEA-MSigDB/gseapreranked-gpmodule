@@ -1,4 +1,4 @@
-# Copyright (c) 2003-2017 Broad Institute, Inc., Massachusetts Institute of Technology, and Regents of the University of California.  All rights reserved.
+# Copyright (c) 2003-2019 Broad Institute, Inc., Massachusetts Institute of Technology, and Regents of the University of California.  All rights reserved.
 #GSEAPreranked
 JVMLevel=1.8
 LSID=urn\:lsid\:broad.mit.edu\:cancer.software.genepattern.module.analysis\:00317\:999999999
@@ -222,7 +222,7 @@ p16_type=java.lang.String
 p16_value=false;true
 
 pipelineModel=
-privacy=private
+privacy=public
 publicationDate=09/26/2017 19\:58 
 quality=${quality.level}
 requiredPatchLSIDs=
@@ -230,6 +230,6 @@ requiredPatchURLs=
 serializedModel=
 taskDoc=doc.html
 taskType=Gene List Selection
-category=beta
+category=
 userid=eby@broadinstitute.org
-version=Beta series\: Updating to use the GSEA v3.0 open-source code base.  Unified the Gene Set DB selector parameters and better downloading of MSigDB files.  Added selected.gene.sets, alt.delim and create.svgs parameters.  Better temp file clean-up and other internal code improvements.  Open-source release.  Updated to give access to MSigDB v6.2.
+version=Updated to use the GSEA v3.0 open-source code base.  Updated to give access to MSigDB v6.2.  Unified the Gene Set DB selector parameters and better downloading of MSigDB files.  Added selected.gene.sets, alt.delim and create.svgs parameters.  Better temp file clean-up and other internal code improvements.
