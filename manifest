@@ -2,7 +2,7 @@
 #GSEAPreranked
 JVMLevel=11
 LSID=urn\:lsid\:broad.mit.edu\:cancer.software.genepattern.module.analysis\:00317\:999999999
-author=Chet Birger, David Eby, Broad Institute
+author=Chet Birger, David Eby; Broad Institute
 commandLine=<libdir>/gsea-cli.sh GSEAPreranked -gmx_list <gene.sets.database> -norm <normalization.mode> -nperm <number.of.permutations> -rnk <ranked.list> -collapse <collapse.dataset> <chip.platform.file> -mode <collapsing.mode.for.probe.sets.with.more.than.one.match> -scoring_scheme <scoring.scheme> -include_only_symbols <omit.features.with.no.symbol.match> -make_sets <make.detailed.gene.set.report> -plot_top_x <num.top.sets> -rnd_seed <random.seed> -set_max <max.gene.set.size> -set_min <min.gene.set.size> -create_svgs <create.svgs> <selected.gene.sets> <output.file.name> <alt.delim> -dev_mode <dev.mode> -zip_report <create.zip> -run_as_genepattern true
 cpuType=any
 description=Runs the gene set enrichment analysis against a user-supplied ranked list of genes.
@@ -37,7 +37,7 @@ p2_optional=
 p2_prefix=
 p2_prefix_when_specified=
 p2_type=java.io.File
-p2_value=ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c1.all.v7.0.symbols.gmt\=c1.all.v7.0.symbols.gmt [Positional];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c2.all.v7.0.symbols.gmt\=c2.all.v7.0.symbols.gmt [Curated];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c2.cgp.v7.0.symbols.gmt\=c2.cgp.v7.0.symbols.gmt [Curated];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c2.cp.v7.0.symbols.gmt\=c2.cp.v7.0.symbols.gmt [Curated];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c2.cp.biocarta.v7.0.symbols.gmt\=c2.cp.biocarta.v7.0.symbols.gmt [Curated];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c2.cp.kegg.v7.0.symbols.gmt\=c2.cp.kegg.v7.0.symbols.gmt [Curated];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c2.cp.reactome.v7.0.symbols.gmt\=c2.cp.reactome.v7.0.symbols.gmt [Curated];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c3.all.v7.0.symbols.gmt\=c3.all.v7.0.symbols.gmt [Motif];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c3.mir.v7.0.symbols.gmt\=c3.mir.v7.0.symbols.gmt [Motif];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c3.tft.v7.0.symbols.gmt\=c3.tft.v7.0.symbols.gmt [Motif];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c4.all.v7.0.symbols.gmt\=c4.all.v7.0.symbols.gmt [Computational];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c4.cgn.v7.0.symbols.gmt\=c4.cgn.v7.0.symbols.gmt [Computational];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c4.cm.v7.0.symbols.gmt\=c4.cm.v7.0.symbols.gmt [Computational];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c5.all.v7.0.symbols.gmt\=c5.all.v7.0.symbols.gmt [Gene Ontology];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c5.bp.v7.0.symbols.gmt\=c5.bp.v7.0.symbols.gmt [Gene Ontology];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c5.cc.v7.0.symbols.gmt\=c5.cc.v7.0.symbols.gmt [Gene Ontology];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c5.mf.v7.0.symbols.gmt\=c5.mf.v7.0.symbols.gmt [Gene Ontology];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c6.all.v7.0.symbols.gmt\=c6.all.v7.0.symbols.gmt [Oncogenic Signatures];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c7.all.v7.0.symbols.gmt\=c7.all.v7.0.symbols.gmt [Immunologic signatures];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/h.all.v7.0.symbols.gmt\=h.all.v7.0.symbols.gmt [Hallmarks]
+p2_value=ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c1.all.v7.0.symbols.gmt\=c1.all.v7.0.symbols.gmt [Positional];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c2.all.v7.0.symbols.gmt\=c2.all.v7.0.symbols.gmt [Curated];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c2.cgp.v7.0.symbols.gmt\=c2.cgp.v7.0.symbols.gmt [Curated];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c2.cp.v7.0.symbols.gmt\=c2.cp.v7.0.symbols.gmt [Curated];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c2.cp.biocarta.v7.0.symbols.gmt\=c2.cp.biocarta.v7.0.symbols.gmt [Curated];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c2.cp.kegg.v7.0.symbols.gmt\=c2.cp.kegg.v7.0.symbols.gmt [Curated];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c2.cp.pid.v7.0.symbols.gmt\=c2.cp.pid.v7.0.symbols.gmt [Curated];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c2.cp.reactome.v7.0.symbols.gmt\=c2.cp.reactome.v7.0.symbols.gmt [Curated];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c3.all.v7.0.symbols.gmt\=c3.all.v7.0.symbols.gmt [Motif];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c3.mir.v7.0.symbols.gmt\=c3.mir.v7.0.symbols.gmt [Motif];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c3.tft.v7.0.symbols.gmt\=c3.tft.v7.0.symbols.gmt [Motif];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c4.all.v7.0.symbols.gmt\=c4.all.v7.0.symbols.gmt [Computational];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c4.cgn.v7.0.symbols.gmt\=c4.cgn.v7.0.symbols.gmt [Computational];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c4.cm.v7.0.symbols.gmt\=c4.cm.v7.0.symbols.gmt [Computational];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c5.all.v7.0.symbols.gmt\=c5.all.v7.0.symbols.gmt [Gene Ontology];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c5.bp.v7.0.symbols.gmt\=c5.bp.v7.0.symbols.gmt [Gene Ontology];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c5.cc.v7.0.symbols.gmt\=c5.cc.v7.0.symbols.gmt [Gene Ontology];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c5.mf.v7.0.symbols.gmt\=c5.mf.v7.0.symbols.gmt [Gene Ontology];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c6.all.v7.0.symbols.gmt\=c6.all.v7.0.symbols.gmt [Oncogenic Signatures];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/c7.all.v7.0.symbols.gmt\=c7.all.v7.0.symbols.gmt [Immunologic signatures];ftp\://gpftp.broadinstitute.org/module_support_files/msigdb/gmt/h.all.v7.0.symbols.gmt\=h.all.v7.0.symbols.gmt [Hallmarks]
 
 p3_MODE=
 p3_TYPE=Integer
@@ -54,7 +54,7 @@ p3_value=
 
 p4_MODE=
 p4_TYPE=TEXT
-p4_default_value=No_Collapse
+p4_default_value=Remap_Only
 p4_description=Select whether to collapse each probe set in the expression dataset into a single vector for the gene, which gets identified by its gene symbol.  It is also possible to remap symbols from one namespace to another without collapsing (an error will occur if multiple source genes map to a single destination gene).  No_Collapse will use the dataset as-is.
 p4_fileFormat=
 p4_flag=
@@ -278,7 +278,7 @@ p20_value=false;true
 pipelineModel=
 privacy=private
 publicationDate=09/26/2017 19\:58 
-quality=${quality.level}
+quality=development
 requiredPatchLSIDs=
 requiredPatchURLs=
 serializedModel=
@@ -286,4 +286,4 @@ taskDoc=doc.html
 taskType=Gene List Selection
 category=beta
 userid=eby@broadinstitute.org
-version=Beta series\: Open JDK 11 port.  Unified the Gene Set DB selector parameters and better downloading of MSigDB files.  Added selected.gene.sets, alt.delim and create.svgs parameters.  Better temp file clean-up and other internal code improvements.  Open-source release.  Updated to give access to MSigDB v7.0.
+version=Beta series\: Updated to use the GSEA v4.0.x code base.  OpenJDK 11 port.  Updated to give access to MSigDB v7.0.  Java code moved into the GSEA Desktop code base.
