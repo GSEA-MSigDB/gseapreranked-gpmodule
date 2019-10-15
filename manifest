@@ -67,7 +67,7 @@ p4_value=No_Collapse;Collapse;Remap_Only
 
 p5_MODE=IN
 p5_TYPE=FILE
-p5_choiceDir=ftp\://ftp.broadinstitute.org/pub/gsea/annotations/
+p5_choiceDir=ftp\://ftp.broadinstitute.org/pub/gsea/annotations_versioned/
 p5_choiceDirFilter=*.chip
 p5_default_value=
 p5_description=DNA Chip (array) annotation file from GSEA website.  Upload your own chip file if the one corresponding to your DNA Microarray platform is not listed in the drop-down menu.  A chip file is only required if collapse dataset is set to true.
