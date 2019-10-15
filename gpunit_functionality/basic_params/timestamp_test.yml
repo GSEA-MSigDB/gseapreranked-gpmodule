@@ -1,0 +1,33 @@
+# Copyright (c) 2003-2019 Broad Institute, Inc., Massachusetts Institute of Technology, and Regents of the University of California.  All rights reserved.
+#module: urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00317:7
+module: GSEAPreranked
+name: GSEAPreranked timestamp_test
+description: Test that the GSEAPreranked 'timestamp' random seed works.  Variation of simple_real_data_test.
+params:
+       ranked.list: "<%gpunit.testData%>gpunit/GSEAPreranked/v7/input/GSE36287_1904.rnk"
+       gene.sets.database: [ "<%gpunit.testData%>gpunit/GSEAPreranked/v7/input/c1.symbols.reduced.gmt" ]
+       number.of.permutations: "10"
+       collapse.dataset: "No_Collapse"
+       chip.platform.file: ""
+       omit.features.with.no.symbol.match: "true"
+       collapsing.mode.for.probe.sets.with.more.than.one.match: "Max_probe"
+       output.file.name: "<ranked.list_basename>.zip"
+       scoring.scheme: "weighted"
+       max.gene.set.size: "500"
+       min.gene.set.size: "15"
+       normalization.mode: "meandiv"
+       randomization.mode: "no_balance"
+       random.seed: "timestamp"
+       create.svgs: "false"
+       num.top.sets: "20"
+       make.detailed.gene.set.report: "false"
+       selected.gene.sets: ""
+       dev.mode: "true"
+       alt.delim: ""
+       create.zip: "true"
+assertions:
+        jobStatus: success
+        # Just testing that the ZIP was created; as we are using 'timestamp' for the random seed, we can't 
+        # be sure of exactly reproducible results.
+        files:
+            "GSE36287_1904.zip": !!null

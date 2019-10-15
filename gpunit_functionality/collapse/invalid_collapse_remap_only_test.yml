@@ -1,0 +1,36 @@
+# Copyright (c) 2003-2019 Broad Institute, Inc., Massachusetts Institute of Technology, and Regents of the University of California.  All rights reserved.
+#module: urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00317:7
+module: GSEAPreranked
+name: GSEAPreranked invalid_collapse_remap_only_test
+description: Test the GSEA 'collapse dataset' function, causing an error on remapping only (no collapse) due to duplicates. This uses a fake ranked list based on the Diabetes dataset.
+params:
+       ranked.list: "<%gpunit.testData%>gpunit/GSEAPreranked/v7/input/Diabetes_faked_ranking_for_test.rnk"
+       gene.sets.database: [ "<%gpunit.testData%>gpunit/GSEAPreranked/v7/input/c1.symbols.reduced.gmt" ]
+       number.of.permutations: "10"
+       collapse.dataset: "Remap_Only"
+       chip.platform.file: "<%gpunit.testData%>gpunit/GSEAPreranked/v7/input/HG_U133A.chip"
+       # Changing the output.file.name for ease of testing
+       output.file.name: "<ranked.list_basename>_collapsed.zip"
+       scoring.scheme: "weighted"
+       max.gene.set.size: "500"
+       min.gene.set.size: "15"
+       collapsing.mode.for.probe.sets.with.more.than.one.match: "Max_probe"
+       normalization.mode: "meandiv"
+       randomization.mode: "no_balance"
+       omit.features.with.no.symbol.match: "true"
+       # Note that we use a fixed random seed rather than the 'timestamp' default so that we'll have reproducible test results
+       random.seed: "149"
+       create.svgs: "false"
+       num.top.sets: "20"
+       make.detailed.gene.set.report: "false"
+       selected.gene.sets: ""
+       dev.mode: "true"
+       alt.delim: ""
+       create.zip: "true"
+assertions:
+        jobStatus: fail
+        files:
+            "stderr.txt":
+                diffCmd: ../grepMessage.sh Multiple.rows.mapped.to.the.symbol
+                # The following file is unused; keeping it just for reference.
+                diff: "<%gpunit.resultData%>gpunit/GSEAPreranked/v7/output/collapse/invalid_collapse_remap_only_test/stderr.txt"
