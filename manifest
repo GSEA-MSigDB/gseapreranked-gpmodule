@@ -3,7 +3,7 @@
 JVMLevel=11
 LSID=urn\:lsid\:broad.mit.edu\:cancer.software.genepattern.module.analysis\:00317\:999999999
 author=Chet Birger, David Eby; Broad Institute
-commandLine=<libdir>/gsea-cli.sh GSEAPreranked -gmx_list <gene.sets.database> -norm <normalization.mode> -nperm <number.of.permutations> -rnk <ranked.list> -collapse <collapse.dataset> <chip.platform.file> -mode <collapsing.mode.for.probe.sets.with.more.than.one.match> -scoring_scheme <scoring.scheme> -include_only_symbols <omit.features.with.no.symbol.match> -make_sets <make.detailed.gene.set.report> -plot_top_x <num.top.sets> -rnd_seed <random.seed> -set_max <max.gene.set.size> -set_min <min.gene.set.size> -create_svgs <create.svgs> <selected.gene.sets> <output.file.name> <alt.delim> -dev_mode <dev.mode> -zip_report <create.zip> -run_as_genepattern true
+commandLine=/bin/sh <libdir>/gsea-cli.sh GSEAPreranked -gmx_list <gene.sets.database> -norm <normalization.mode> -nperm <number.of.permutations> -rnk <ranked.list> -collapse <collapse.dataset> <chip.platform.file> -mode <collapsing.mode.for.probe.sets.with.more.than.one.match> -scoring_scheme <scoring.scheme> -include_only_symbols <omit.features.with.no.symbol.match> -make_sets <make.detailed.gene.set.report> -plot_top_x <num.top.sets> -rnd_seed <random.seed> -set_max <max.gene.set.size> -set_min <min.gene.set.size> -create_svgs <create.svgs> <selected.gene.sets> <output.file.name> <alt.delim> -dev_mode <dev.mode> -zip_report <create.zip> -run_as_genepattern true
 cpuType=any
 description=Runs the gene set enrichment analysis against a user-supplied ranked list of genes.
 fileFormat=
@@ -91,7 +91,7 @@ p6_optional=
 p6_prefix=
 p6_prefix_when_specified=
 p6_type=java.lang.String
-p6_value=classic\=classic Kolmorogorov-Smirnov;weighted;weighted_p2;weighted_p1.5
+p6_value=classic\=classic Kolmogorov-Smirnov;weighted;weighted_p2;weighted_p1.5
 
 p7_MODE=
 p7_TYPE=Integer
