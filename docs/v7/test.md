@@ -1,4 +1,4 @@
-# GSEAPreranked (v7.0.x)
+# GSEAPreranked (v7.1.x)
 
 Runs the gene set enrichment analysis against a user-supplied ranked
 list of genes.
@@ -14,7 +14,7 @@ for GSEA questions.
 team](http://software.broadinstitute.org/cancer/software/genepattern/contact)
 for GenePattern issues.
 
-**GSEA Version:** 4.0.3
+**GSEA Version:** 4.1.0
 
 ## Introduction
 
@@ -98,9 +98,9 @@ GSEA User Guide:
 
 GSEA website: <http://www.gsea-msigdb.org/>
 
-This version of the module is based on the GSEA v4.0.2 code base. See
+This version of the module is based on the GSEA v4.1.x code base. See
 the [Release
-Notes](http://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/GSEA_v4.0.x_Release_Notes)
+Notes](http://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/GSEA_v4.1.x_Release_Notes)
 for new features and other notable changes.
 
 ## Parameters
@@ -139,6 +139,7 @@ If you want to use files from an earlier version of MSigDB you will need to down
 <tr class="even">
 <td align="left">collapse dataset <span style="color:red;">*</span></td>
 <td align="left"><p>Select whether to collapse each probe set in the expression dataset into a single vector for the gene, which gets identified by its gene symbol. It is also possible to remap symbols from one namespace to another without collapsing (an error will occur if multiple source genes map to a single destination gene).</p>
+<p>When using the <em>Collapse</em> or <em>Remap_Only</em> mode with an annotated CHIP (such as those from MSigDB), the resulting reports will also be annotated.</p>
 <p><em>No_Collapse</em> will use the dataset as-is, with its native feature identifiers. When you select this option, the chip annotation file (<em>chip platform</em> parameter) is ignored and you must specify a gene set file (<em>gene sets database file</em> parameter) that identify genes using the same feature (gene or probe) identifiers as is used in your expression dataset.</p>
 Default: <em>Remap_Only</em></td>
 </tr>
@@ -292,6 +293,11 @@ Java
 </tr>
 </thead>
 <tbody>
+<tr class="even">
+<td align="left">7.1.0</td>
+<td align="left">2020-7-30</td>
+<td align="left">Updated to use the GSEA v4.1.0 code base.</td>
+</tr>
 <tr class="odd">
 <td align="left">7.0.4</td>
 <td align="left">2020-4-2</td>

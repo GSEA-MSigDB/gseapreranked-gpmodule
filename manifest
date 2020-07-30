@@ -286,4 +286,4 @@ taskDoc=doc.html
 taskType=Gene List Selection
 category=
 userid=eby@broadinstitute.org
-version=Updated to use the GSEA v4.0.3 code base.  Updated to give access to MSigDB v7.1.
+version=Updated to use the GSEA v4.1.0 code base.

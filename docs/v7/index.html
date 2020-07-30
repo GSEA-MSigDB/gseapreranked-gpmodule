@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- saved from url=(0091)http://software.broadinstitute.org/cancer/software/genepattern/modules/docs/GSEAPreranked/5 -->
 <html class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>GSEAPreranked (v7.0.x)</title>
+  <title>GSEAPreranked (v7.1.x)</title>
   <link href="./application.css" media="all" rel="stylesheet">
   <script src="./application.js"></script><style>.cke{visibility:hidden;}</style><style type="text/css"></style>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +14,7 @@
 <body>
 	<div class="gp-content-header fluid">
 	<div class="container">
-		<h1>GSEAPreranked (v7.0.x) <a style="float: right" href="https://www.genepattern.org"><img alt="GP Logo" src="gplogo.png" /></a></h1>
+		<h1>GSEAPreranked (v7.1.x) <a style="float: right" href="https://www.genepattern.org"><img alt="GP Logo" src="gplogo.png" /></a></h1>
 	</div>
 </div>
 <div class="container">
@@ -32,7 +32,7 @@
 <p></p>
                 </div>
 				<div class="col-sm-4">
-					<p><strong>GSEA Version: </strong> 4.0.3</p>
+					<p><strong>GSEA Version: </strong> 4.1.0</p>
 				</div>
 			</div>
 
@@ -74,8 +74,8 @@
 
 <p>GSEA website: <a href="http://www.gsea-msigdb.org/">http://www.gsea-msigdb.org/</a></p>
 
-<p>This version of the module is based on the GSEA v4.0.2 code base.  See the 
-<a href="http://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/GSEA_v4.0.x_Release_Notes">Release Notes</a> for new features and other notable changes.
+<p>This version of the module is based on the GSEA v4.1.x code base.  See the 
+<a href="http://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/GSEA_v4.1.x_Release_Notes">Release Notes</a> for new features and other notable changes.
 </p>
 
 				</div>
@@ -116,6 +116,7 @@
 			<td valign="top">collapse dataset&nbsp;<span style="color:red;">*</span></td>
 			<td valign="top">
 			<p>Select whether to collapse each probe set in the expression dataset into a single vector for the gene, which gets identified by its gene symbol.  It is also possible to remap symbols from one namespace to another without collapsing (an error will occur if multiple source genes map to a single destination gene).</p>
+			<p>When using the <em>Collapse</em> or <em>Remap_Only</em> mode with an annotated CHIP (such as those from MSigDB), the resulting reports will also be annotated.</p>
 
 			<p><em>No_Collapse</em> will use the dataset as-is, with its native feature identifiers.  When you select this option, the chip annotation file (<em>chip platform</em> parameter) is ignored and you must specify a gene set file (<em>gene sets database file</em> parameter) that identify genes using the same feature (gene or probe) identifiers as is used in your expression dataset.</p>
 			Default: <em>Remap_Only</em></td>
@@ -281,6 +282,11 @@ will always be created directly.</p>
 					</tr>
 				</thead>
 				<tbody>
+                        <tr>
+                            <td>7.1.0</td>
+                            <td>2020-7-30</td>
+                            <td>Updated to use the GSEA v4.1.0 code base.</td>
+                        </tr>
                         <tr>
                             <td>7.0.4</td>
                             <td>2020-4-2</td>
