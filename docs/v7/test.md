@@ -293,6 +293,11 @@ Java
 </tr>
 </thead>
 <tbody>
+<tr class="even">
+<td align="left">7.2.1</td>
+<td align="left">2020-10-27</td>
+<td align="left">Fixed a bug in the Collapse Sum mode.</td>
+</tr>
 <tr class="odd">
 <td align="left">7.2.0</td>
 <td align="left">2020-9-23</td>
