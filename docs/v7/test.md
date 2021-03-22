@@ -292,6 +292,11 @@ Java
 <th align="left">Description</th>
 </tr>
 </thead>
+<tr class="odd">
+<td align="left">7.2.2</td>
+<td align="left">2021-3-22</td>
+<td align="left">Updated to MSigDB v7.3.</td>
+</tr>
 <tbody>
 <tr class="even">
 <td align="left">7.2.1</td>
@@ -351,7 +356,7 @@ Java
 </tbody>
 </table>
 
-Copyright © 2003-2019 Broad Institute, Inc., Massachusetts Institute of
+Copyright © 2003-2021 Broad Institute, Inc., Massachusetts Institute of
 Technology, and Regents of the University of California. All rights
 reserved.
 
