@@ -292,12 +292,17 @@ Java
 <th align="left">Description</th>
 </tr>
 </thead>
+<tbody>
+<tr class="even">
+<td align="left">7.2.3</td>
+<td align="left">2021-4-2</td>
+<td align="left">Updated to MSigDB v7.4.</td>
+</tr>
 <tr class="odd">
 <td align="left">7.2.2</td>
 <td align="left">2021-3-22</td>
 <td align="left">Updated to MSigDB v7.3.</td>
 </tr>
-<tbody>
 <tr class="even">
 <td align="left">7.2.1</td>
 <td align="left">2020-10-27</td>
