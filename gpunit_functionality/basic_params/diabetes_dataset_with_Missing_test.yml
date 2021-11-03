@@ -1,0 +1,41 @@
+# Copyright (c) 2003-2021 Broad Institute, Inc., Massachusetts Institute of Technology, and Regents of the University of California.  All rights reserved.
+#module: urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00317:7
+module: GSEAPreranked
+name: GSEAPreranked diabetes_dataset_with_Missing_test
+description: A test of GSEAPreranked using a dataset with Missing values (based on Diabetes).  Tests are centered on GSTK1 and SIT.
+params:
+       ranked.list: "<%gpunit.testData%>gpunit/GSEAPreranked/v7/input/Diabetes_collapsed_with_Missing.rnk"
+       gene.sets.database: [ "<%gpunit.testData%>gpunit/GSEAPreranked/v7/input/c1.symbols.reduced.gmt" ]
+       number.of.permutations: "10"
+       collapse.dataset: "No_Collapse"
+       chip.platform.file: ""
+       omit.features.with.no.symbol.match: "true"
+       collapsing.mode.for.probe.sets.with.more.than.one.match: "Max_probe"
+       output.file.name: "<ranked.list_basename>.zip"
+       scoring.scheme: "weighted"
+       max.gene.set.size: "500"
+       min.gene.set.size: "15"
+       normalization.mode: "meandiv"
+       randomization.mode: "no_balance"
+       # Note that we use a fixed random seed rather than the 'timestamp' default so that we'll have reproducible test results
+       random.seed: "149"
+       create.svgs: "false"
+       num.top.sets: "20"
+       make.detailed.gene.set.report: "false"
+       selected.gene.sets: ""
+       dev.mode: "true"
+       alt.delim: ""
+       create.zip: "false"
+assertions:
+        jobStatus: success
+        files:
+            "results.edb":
+               diffCmd: diff -q --strip-trailing-cr
+               diff: "<%gpunit.resultData%>gpunit/GSEAPreranked/v7/output/basic_params/diabetes_dataset_with_Missing_test/results.edb"
+            "gene_sets.gmt":
+               diffCmd: diff -q --strip-trailing-cr
+               diff: "<%gpunit.resultData%>gpunit/GSEAPreranked/v7/output/basic_params/diabetes_dataset_with_Missing_test/gene_sets.gmt"
+            "stdout.txt":
+               diffCmd: ../grepMessages.sh
+               diff: "<%gpunit.resultData%>gpunit/GSEAPreranked/v7/output/basic_params/diabetes_dataset_with_Missing_test/stdoutMatches.txt"
+               
