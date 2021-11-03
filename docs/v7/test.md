@@ -1,4 +1,4 @@
-# GSEAPreranked (v7.2.x)
+# GSEAPreranked (v7.3.x)
 
 Runs the gene set enrichment analysis against a user-supplied ranked
 list of genes.
@@ -14,7 +14,7 @@ for GSEA questions.
 team](http://software.broadinstitute.org/cancer/software/genepattern/contact)
 for GenePattern issues.
 
-**GSEA Version:** 4.1.0
+**GSEA Version:** 4.2.0
 
 ## Introduction
 
@@ -217,10 +217,6 @@ Default: <em>Remap_Only</em></td>
 <td align="left">alt delim</td>
 <td align="left">Optional alternate delimiter character for gene set names instead of comma for use with selected.gene.sets. If used, a semicolon is recommended. </td>
 </tr>
-<tr class="odd">
-<td align="left">create zip <span style="color:red;">*</span></td>
-<td align="left">Create a ZIP bundle of the output files. This is true by default, matching the former behavior where a ZIP bundle was always created.</td>
-</tr>
 </tbody>
 </table>
 
@@ -246,16 +242,14 @@ drop-down
 
 ## Output Files
 
-1\. Optional Enrichment Report archive: ZIP
+1\. Enrichment Report archive: ZIP
 
 ZIP file containing the result files.  For more information on
 interpreting these results, see [Interpreting GSEA
 Results](http://www.gsea-msigdb.org/gsea/doc/GSEAUserGuideTEXT.htm#_Interpreting_GSEA_Results)
 in the GSEA User Guide. Note that in prior versions the ZIP bundle was
 created as the only output file. This behavior has been changed to give
-direct access to the results without the need for a download. The
-default is to create the ZIP bundle, matching the former behavior, but
-the report files will always be created directly.
+direct access to the results without the need for a download.
 
 2\. Enrichment Report: HTML and PNG images
 
@@ -293,6 +287,11 @@ Java
 </tr>
 </thead>
 <tbody>
+<tr class="even">
+<td align="left">7.3.0</td>
+<td align="left">2021-11-5</td>
+<td align="left">Updated with the GSEA Desktop 4.2.0 code base with numerous bug fixes.  Fixes some issues handling datasets with missing values. Changed the FDR q-value scale on the NES vs Significance plot.</td>
+</tr>
 <tr class="odd">
 <td align="left">7.2.4</td>
 <td align="left">2021-4-22</td>
