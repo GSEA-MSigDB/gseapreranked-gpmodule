@@ -1,8 +1,8 @@
 # Copyright (c) 2003-2021 Broad Institute, Inc., Massachusetts Institute of Technology, and Regents of the University of California.  All rights reserved.
 #module: urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00317:7
 module: GSEAPreranked
-name: GSEAPreranked collapse_NaN_Missing_sum_test
-description: Test collapsing a dataset using Sum_of_probes handling Infinite, NaN and Missing values. This uses a fake ranked list based on the Diabetes dataset. Focused on HTR4, HTR7, NPAL2, NPAL3, BCR, AGTR2, FLJ22639, GSTK1.
+name: GSEAPreranked collapse_NaN_Missing_abs_max_test
+description: Test collapsing a dataset using Abs_max_of_probes handling Infinite, NaN and Missing values. This uses a fake ranked list based on the Diabetes dataset. Focused on HTR4, HTR7, NPAL2, NPAL3, BCR, AGTR2, FLJ22639, GSTK1.
 params:
        ranked.list: "<%gpunit.testData%>gpunit/GSEAPreranked/v7/input/Diabetes_faked_ranking_for_NaN_Missing_test.rnk"
        gene.sets.database: [ "<%gpunit.testData%>gpunit/GSEAPreranked/v7/input/c1.symbols.reduced.gmt" ]
@@ -14,7 +14,7 @@ params:
        scoring.scheme: "weighted"
        max.gene.set.size: "500"
        min.gene.set.size: "15"
-       collapsing.mode.for.probe.sets.with.more.than.one.match: "Sum_of_probes"
+       collapsing.mode.for.probe.sets.with.more.than.one.match: "Abs_max_of_probes"
        normalization.mode: "meandiv"
        randomization.mode: "no_balance"
        omit.features.with.no.symbol.match: "true"
@@ -32,8 +32,8 @@ assertions:
         files:
             "Diabetes_faked_ranking_for_NaN_Missing_test_collapsed.zip":
                 diffCmd: ../diffGseaResults.sh
-                diff: "<%gpunit.resultData%>gpunit/GSEAPreranked/v7/output/collapse/collapse_NaN_Missing_sum_test/Diabetes_faked_ranking_for_NaN_Missing_test_collapsed.zip"
+                diff: "<%gpunit.resultData%>gpunit/GSEAPreranked/v7/output/collapse/collapse_NaN_Missing_abs_max_test/Diabetes_faked_ranking_for_NaN_Missing_test_collapsed.zip"
             "stdout.txt":
                 diffCmd: ../grepMessages.sh
-                diff: "<%gpunit.resultData%>gpunit/GSEAPreranked/v7/output/collapse/collapse_NaN_Missing_sum_test/stdoutMatches.txt"
+                diff: "<%gpunit.resultData%>gpunit/GSEAPreranked/v7/output/collapse/collapse_NaN_Missing_abs_max_test/stdoutMatches.txt"
                 
