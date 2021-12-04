@@ -121,7 +121,7 @@ p8_value=
 
 p9_MODE=
 p9_TYPE=TEXT
-p9_default_value=Max_probe
+p9_default_value=Abs_max_of_probes
 p9_description=Collapsing mode.  This has no effect when remapping symbols.  For custom ranking metrics, be very cautious when selecting any of these modes to be sure it is compatible with your metric. 
 p9_fileFormat=
 p9_flag=
@@ -130,7 +130,7 @@ p9_optional=
 p9_prefix=
 p9_prefix_when_specified=
 p9_type=java.lang.String
-p9_value=Max_probe;Median_of_probes;Mean_of_probes;Sum_of_probes
+p9_value=Abs_max_of_probes;Max_probe;Median_of_probes;Mean_of_probes;Sum_of_probes
 
 p10_MODE=
 p10_TYPE=TEXT
@@ -273,4 +273,4 @@ taskDoc=doc.html
 taskType=Pathway Analysis
 categories=gsea;pathway analysis
 userid=eby@broadinstitute.org
-version=Updated with the GSEA Desktop 4.2.0 code base with numerous bug fixes.  Fixes some issues handling datasets with missing values. Changed the FDR q-value scale on the NES vs Significance plot.
+version=Updated with the GSEA Desktop 4.2.0 code base with numerous bug fixes.  Adds the Abs_max_of_probes collapse mode.  Fixes some issues handling datasets with missing values. Improved warnings and logging.  Changed the FDR q-value scale on the NES vs Significance plot.

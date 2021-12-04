@@ -171,7 +171,10 @@ Default: <em>Remap_Only</em></td>
 <td align="left"><p>Collapsing mode for sets of multiple probes for a single gene. Used only when the <em>collapse dataset</em> parameter is set to <em>Collapse</em>. Select the expression values to use for the single probe that will represent all probe sets for the gene. For custom ranking metrics, be very cautious when selecting any of these modes to be sure it is compatible with your metric.</p>
 <p>Options are:</p>
 <ul>
-<li>Max_probe (default): For each sample, use the maximum expression value for the probe set.  That is, if there are three probes that map to a single gene, the expression value that will represent the collapsed probe set will be the maximum expression value from those three probes.</li>
+<li>Abs_max_of_probes (default): For each sample, use the expression value for the probe set with the maximum **absolute value**.  Note that each value retains its original sign but is chosen based on absolute value.
+In other words, the largest magnitude value is used.  While this method is useful with computational-based input datasets it is generally **not recommended** for use with quantification-based expression 
+measures such as counts or microarray fluorescence.</li>
+<li>Max_probe: For each sample, use the maximum expression value for the probe set.  That is, if there are three probes that map to a single gene, the expression value that will represent the collapsed probe set will be the maximum expression value from those three probes.</li>
 <li>Median_of_probes: For each sample, use the median expression value for the probe set.</li>
 <li>Mean_of_probes: For each sample, use the mean expression value for the probe set.</li>
 <li>Sum_of_probes: For each sample, sum all the expression values of the probe set.</li>
@@ -290,7 +293,7 @@ Java
 <tr class="even">
 <td align="left">7.3.0</td>
 <td align="left">2021-11-5</td>
-<td align="left">Updated with the GSEA Desktop 4.2.0 code base with numerous bug fixes.  Fixes some issues handling datasets with missing values. Changed the FDR q-value scale on the NES vs Significance plot.</td>
+<td align="left">Updated with the GSEA Desktop 4.2.0 code base with numerous bug fixes.  Adds the Abs_max_of_probes collapse mode.  Fixes some issues handling datasets with missing values. Improved warnings and logging.  Changed the FDR q-value scale on the NES vs Significance plot.</td>
 </tr>
 <tr class="odd">
 <td align="left">7.2.4</td>
