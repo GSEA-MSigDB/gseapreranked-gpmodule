@@ -1,0 +1,39 @@
+# Copyright (c) 2003-2021 Broad Institute, Inc., Massachusetts Institute of Technology, and Regents of the University of California.  All rights reserved.
+#module: urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00317:7
+module: GSEAPreranked
+name: GSEAPreranked collapse_NaN_Missing_median_test
+description: Test collapsing a dataset using Median_of_probes handling Infinite, NaN and Missing values. This uses a fake ranked list based on the Diabetes dataset. Focused on HTR4, HTR7, NPAL2, NPAL3, BCR, AGTR2, FLJ22639, GSTK1.
+params:
+       ranked.list: "<%gpunit.testData%>gpunit/GSEAPreranked/v7/input/Diabetes_faked_ranking_for_NaN_Missing_test.rnk"
+       gene.sets.database: [ "<%gpunit.testData%>gpunit/GSEAPreranked/v7/input/c1.symbols.reduced.gmt" ]
+       number.of.permutations: "10"
+       collapse.dataset: "Collapse"
+       chip.platform.file: "<%gpunit.testData%>gpunit/GSEAPreranked/v7/input/HG_U133A.chip"
+       # Changing the output.file.name for ease of testing
+       output.file.name: "<ranked.list_basename>_collapsed.zip"
+       scoring.scheme: "weighted"
+       max.gene.set.size: "500"
+       min.gene.set.size: "15"
+       collapsing.mode.for.probe.sets.with.more.than.one.match: "Median_of_probes"
+       normalization.mode: "meandiv"
+       randomization.mode: "no_balance"
+       omit.features.with.no.symbol.match: "true"
+       # Note that we use a fixed random seed rather than the 'timestamp' default so that we'll have reproducible test results
+       random.seed: "149"
+       create.svgs: "false"
+       num.top.sets: "20"
+       make.detailed.gene.set.report: "false"
+       selected.gene.sets: ""
+       dev.mode: "true"
+       alt.delim: ""
+       create.zip: "true"
+assertions:
+        jobStatus: success
+        files:
+            "Diabetes_faked_ranking_for_NaN_Missing_test_collapsed.zip":
+                diffCmd: ../diffGseaResults.sh
+                diff: "<%gpunit.resultData%>gpunit/GSEAPreranked/v7/output/collapse/collapse_NaN_Missing_median_test/Diabetes_faked_ranking_for_NaN_Missing_test_collapsed.zip"
+            "stdout.txt":
+                diffCmd: ../grepMessages.sh
+                diff: "<%gpunit.resultData%>gpunit/GSEAPreranked/v7/output/collapse/collapse_NaN_Missing_median_test/stdoutMatches.txt"
+                
