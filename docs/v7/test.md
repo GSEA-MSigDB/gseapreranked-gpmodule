@@ -290,6 +290,11 @@ Java
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td align="left">7.3.3</td>
+<td align="left">2022-1-19</td>
+<td align="left">Updated to MSigDB v7.5.1.</td>
+</tr>
 <tr class="even">
 <td align="left">7.3.2</td>
 <td align="left">2022-1-12</td>
