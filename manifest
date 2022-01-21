@@ -3,14 +3,14 @@
 JVMLevel=11
 LSID=urn\:lsid\:broad.mit.edu\:cancer.software.genepattern.module.analysis\:00317\:999999999
 author=Chet Birger, David Eby; Broad Institute
-commandLine=/opt/gsea/GSEA_4.2.1/gsea-cli.sh GSEAPreranked -gmx_list <gene.sets.database> -norm <normalization.mode> -nperm <number.of.permutations> -rnk <ranked.list> -collapse <collapse.dataset> <chip.platform.file> -mode <collapsing.mode.for.probe.sets.with.more.than.one.match> -scoring_scheme <scoring.scheme> -include_only_symbols <omit.features.with.no.symbol.match> -make_sets <make.detailed.gene.set.report> -plot_top_x <num.top.sets> -rnd_seed <random.seed> -set_max <max.gene.set.size> -set_min <min.gene.set.size> -create_svgs <create.svgs> <selected.gene.sets> <output.file.name> <alt.delim> -dev_mode <dev.mode> -zip_report true -run_as_genepattern true
+commandLine=/opt/gsea/GSEA_4.2.2/gsea-cli.sh GSEAPreranked -gmx_list <gene.sets.database> -norm <normalization.mode> -nperm <number.of.permutations> -rnk <ranked.list> -collapse <collapse.dataset> <chip.platform.file> -mode <collapsing.mode.for.probe.sets.with.more.than.one.match> -scoring_scheme <scoring.scheme> -include_only_symbols <omit.features.with.no.symbol.match> -make_sets <make.detailed.gene.set.report> -plot_top_x <num.top.sets> -rnd_seed <random.seed> -set_max <max.gene.set.size> -set_min <min.gene.set.size> -create_svgs <create.svgs> <selected.gene.sets> <output.file.name> <alt.delim> -dev_mode <dev.mode> -zip_report true -run_as_genepattern true
 cpuType=any
 description=Runs the gene set enrichment analysis against a user-supplied ranked list of genes.
 fileFormat=
 language=Java
 name=GSEAPreranked
 os=any
-job.docker.image=genepattern/gsea_4.2.1\:0.1
+job.docker.image=genepattern/gsea_4.2.2\:0.1
 
 p1_MODE=IN
 p1_TYPE=FILE
@@ -273,4 +273,4 @@ taskDoc=doc.html
 taskType=Pathway Analysis
 categories=gsea;pathway analysis
 userid=eby@broadinstitute.org
-version=Updated to MSigDB v7.5.1.
+version=Updated Log4J to 2.17.1.
