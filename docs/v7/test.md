@@ -14,7 +14,7 @@ for GSEA questions.
 team](http://software.broadinstitute.org/cancer/software/genepattern/contact)
 for GenePattern issues.
 
-**GSEA Version:** 4.2.1
+**GSEA Version:** 4.3._x_
 
 ## Introduction
 
@@ -290,6 +290,11 @@ Java
 </tr>
 </thead>
 <tbody>
+<tr class="even">
+<td align="left">7.3.7</td>
+<td align="left">2022-9-26</td>
+<td align="left">Updated to Human MSigDB v2022.1.Hs and Mouse MSigDB 2022.1.Mm.</td>
+</tr>
 <tr class="even">
 <td align="left">7.3.6</td>
 <td align="left">2022-9-15</td>
