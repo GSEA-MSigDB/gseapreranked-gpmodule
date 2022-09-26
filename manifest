@@ -10,7 +10,7 @@ fileFormat=
 language=Java
 name=GSEAPreranked
 os=any
-job.docker.image=genepattern/gsea_4.2.3\:local
+job.docker.image=genepattern/gsea_4.2.3\:0.1
 
 p1_MODE=IN
 p1_TYPE=FILE
@@ -275,4 +275,4 @@ taskDoc=doc.html
 taskType=Pathway Analysis
 categories=gsea;pathway analysis
 userid=eby@broadinstitute.org
-version=Updated to Human MSigDB v2022.1.Hs. Direct support for Mouse MSigDB 2022.1.Mm is not yet available
+version=Fixed a manifest typo. Updated to Human MSigDB v2022.1.Hs. Direct support for Mouse MSigDB 2022.1.Mm is not yet available

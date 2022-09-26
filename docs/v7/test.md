@@ -290,6 +290,11 @@ Java
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td align="left">7.3.7</td>
+<td align="left">2022-9-26</td>
+<td align="left">Fixed a manifest typo. Updated to Human MSigDB v2022.1.Hs. Direct support for Mouse MSigDB 2022.1.Mm is not yet available</td>
+</tr>
 <tr class="even">
 <td align="left">7.3.6</td>
 <td align="left">2022-9-15</td>
