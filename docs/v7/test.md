@@ -1,4 +1,4 @@
-# GSEAPreranked (v7.3.x)
+# GSEAPreranked (v7.4.x)
 
 Runs the gene set enrichment analysis against a user-supplied ranked
 list of genes.
@@ -291,9 +291,14 @@ Java
 </thead>
 <tbody>
 <tr class="even">
+<td align="left">7.4.0</td>
+<td align="left">2022-10-2</td>
+<td align="left">Updated to Human MSigDB v2022.1.Hs and Mouse MSigDB 2022.1.Mm.</td>
+</tr>
+<tr class="odd">
 <td align="left">7.3.7</td>
 <td align="left">2022-9-26</td>
-<td align="left">Updated to Human MSigDB v2022.1.Hs and Mouse MSigDB 2022.1.Mm.</td>
+<td align="left">Fixed a manifest typo. Updated to Human MSigDB v2022.1.Hs. Direct support for Mouse MSigDB 2022.1.Mm is not yet available</td>
 </tr>
 <tr class="even">
 <td align="left">7.3.6</td>
@@ -401,7 +406,7 @@ Java
 </tbody>
 </table>
 
-Copyright © 2003-2021 Broad Institute, Inc., Massachusetts Institute of
+Copyright © 2003-2022 Broad Institute, Inc., Massachusetts Institute of
 Technology, and Regents of the University of California. All rights
 reserved.
 
