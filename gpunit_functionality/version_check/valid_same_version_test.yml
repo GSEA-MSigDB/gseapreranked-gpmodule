@@ -1,0 +1,38 @@
+# Copyright (c) 2003-2022 Broad Institute, Inc., Massachusetts Institute of Technology, and Regents of the University of California.  All rights reserved.
+#module: urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00317:7
+module: GSEAPreranked
+name: GSEAPreranked valid_same_version_test
+description: Test the GSEAPreranked version check with files of matching version and no collapsing.  Note that we need to use remote files to trigger the check.
+params:
+       ranked.list: "<%gpunit.testData%>gpunit/GSEAPreranked/v7/input/Diabetes_collapsed_symbols.rnk"
+       gene.sets.database: [ "https://data.broadinstitute.org/gsea-msigdb/msigdb/release/2022.1.Hs/h.all.v2022.1.Hs.symbols.gmt",
+                             "https://data.broadinstitute.org/gsea-msigdb/msigdb/release/2022.1.Hs/c1.all.v2022.1.Hs.symbols.gmt" ]
+       number.of.permutations: "10"
+       collapse.dataset: "No_Collapse"
+       chip.platform.file: ""
+       omit.features.with.no.symbol.match: "true"
+       collapsing.mode.for.probe.sets.with.more.than.one.match: "Max_probe"
+       output.file.name: "<ranked.list_basename>.zip"
+       scoring.scheme: "weighted"
+       max.gene.set.size: "500"
+       min.gene.set.size: "15"
+       normalization.mode: "meandiv"
+       randomization.mode: "no_balance"
+       # Note that we use a fixed random seed rather than the 'timestamp' default so that we'll have reproducible test results
+       random.seed: "149"
+       create.svgs: "false"
+       num.top.sets: "20"
+       make.detailed.gene.set.report: "false"
+       selected.gene.sets: ""
+       dev.mode: "true"
+       alt.delim: ""
+       create.zip: "false"
+assertions:
+        jobStatus: success
+        files:
+            "results.edb":
+               diffCmd: diff -q --strip-trailing-cr
+               diff: "<%gpunit.resultData%>gpunit/GSEAPreranked/v7/output/version_check/valid_same_version_test/results.edb"
+            "gene_sets.gmt":
+               diffCmd: diff -q --strip-trailing-cr
+               diff: "<%gpunit.resultData%>gpunit/GSEAPreranked/v7/output/version_check/valid_same_version_test/gene_sets.gmt"
