@@ -129,7 +129,7 @@ in the parameter descriptions.
 </tr>
 <tr class="even">
 <td align="left">gene sets database <span style="color:red;">*</span></td>
-<td align="left"><p>This parameter's drop-down allows you to select gene sets from the <a href="http://www.gsea-msigdb.org/gsea/msigdb/index.jsp">Molecular Signatures Database (MSigDB)</a>on the GSEA website.  This drop-down provides access to only the most current version of MSigDB.  You can also upload your own gene set file(s) in <a href="http://www.broadinstitute.org/cancer/software/genepattern/gp_guides/file-formats/sections/gmt">GMT</a>, <a href="http://www.broadinstitute.org/cancer/software/genepattern/gp_guides/file-formats/sections/gmx">GMX</a>, or <a href="http://www.broadinstitute.org/cancer/software/genepattern/gp_guides/file-formats/sections/grp">GRP</a> format. </p>
+<td align="left"><p>This parameter's drop-down allows you to select gene sets from the <a href="http://www.gsea-msigdb.org/gsea/msigdb/index.jsp">Molecular Signatures Database (MSigDB)</a>on the GSEA website.  This drop-down provides access to only the most current version of MSigDB.  You can also upload your own gene set file(s) in <a href="https://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats#GMT:_Gene_Matrix_Transposed_file_format_.28.2A.gmt.29">GMT</a>, <a href="https://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats#GMX:_Gene_MatriX_file_format_.28.2A.gmx.29">GMX</a>, or <a href="https://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats#GRP:_Gene_set_file_format_.28.2A.grp.29">GRP</a> format. </p>
 If you want to use files from an earlier version of MSigDB you will need to download them from the archived releases on the <a href="http://www.gsea-msigdb.org/gsea/downloads.jsp">website</a>.</td>
 </tr>
 <tr class="odd">
@@ -145,7 +145,7 @@ Default: <em>Remap_Only</em></td>
 </tr>
 <tr class="odd">
 <td align="left">chip platform</td>
-<td align="left"><p>This drop-down allows you to specify the chip annotation file, which lists each probe on a chip and its matching HUGO gene symbol, used for the expression array.  This parameter is required if <em>collapse dataset </em>is set to true.  The chip files listed here are from the GSEA website: <a href="http://www.gsea-msigdb.org/gsea/downloads.jsp" class="uri">http://www.gsea-msigdb.org/gsea/downloads.jsp</a>.  If you used a file not listed here, you will need to provide it (in<span style="background-color: rgb(239, 239, 239);"> </span><a href="http://www.broadinstitute.org/cancer/software/genepattern/gp_guides/file-formats/sections/chip">CHIP</a> format) using 'Upload your own file'.</p>
+<td align="left"><p>This drop-down allows you to specify the chip annotation file, which lists each probe on a chip and its matching HUGO gene symbol, used for the expression array.  This parameter is required if <em>collapse dataset </em>is set to true.  The chip files listed here are from the GSEA website: <a href="http://www.gsea-msigdb.org/gsea/downloads.jsp" class="uri">http://www.gsea-msigdb.org/gsea/downloads.jsp</a>.  If you used a file not listed here, you will need to provide it (in<span style="background-color: rgb(239, 239, 239);"> </span><a href="https://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats#CHIP:_Chip_file_format_.28.2A.chip.29">CHIP</a> format) using 'Upload your own file'.</p>
 <p>Please see the <a href="http://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/MSigDB_v7.0_Release_Notes">MSigDB 7.0 Release Notes</a> for information about symbol remapping.</p></td>
 </tr>
 <tr class="even">
@@ -233,13 +233,13 @@ list: * [RNK](http://www.broadinstitute.org/cancer/software/gsea/wiki/index.ph
 This file contains the rank ordered gene (or feature) list.
 
 2. *gene sets database
-file:* [GMT](http://www.broadinstitute.org/cancer/software/genepattern/gp_guides/file-formats/sections/gmt), [GMX](http://www.broadinstitute.org/cancer/software/genepattern/gp_guides/file-formats/sections/gmx),
-or [GRP](http://www.broadinstitute.org/cancer/software/genepattern/gp_guides/file-formats/sections/grp) file
+file:* [GMT](https://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats#GMT:_Gene_Matrix_Transposed_file_format_.28.2A.gmt.29), [GMX](https://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats#GMX:_Gene_MatriX_file_format_.28.2A.gmx.29),
+or [GRP](https://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats#GRP:_Gene_set_file_format_.28.2A.grp.29) file
 
 Gene set files, either your own or from the listed MSigDB files.
 
 3\. *chip platform:* an
-optional [CHIP](http://www.broadinstitute.org/cancer/software/genepattern/gp_guides/file-formats/sections/chip)
+optional [CHIP](https://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats#CHIP:_Chip_file_format_.28.2A.chip.29)
 file may be provided if you do not select a *chip platform* from the
 drop-down
 
