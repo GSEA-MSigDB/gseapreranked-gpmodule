@@ -162,7 +162,7 @@ in the parameter descriptions.
     - Seed used to generate a random number for phenotype and gene_set permutations. Timestamp is the default. Using a specific integer-valued seed generates consistent results, which is useful when testing software.
 - **output file name**<span style="color:red;">*</span> 
     - Name of the output file. The name cannot include spaces. 
-    - Default: <expression.dataset_basename>.zip
+    - Default: &lt;expression.dataset_basename&gt;.zip
 - **create svgs**<span style="color:red;">*</span>
     - Whether to create SVG images (compressed) along with PNGs. Saving PNGs requires **a lot of storage**; therefore, this parameter is set to false by default.
 - **selected gene sets**
